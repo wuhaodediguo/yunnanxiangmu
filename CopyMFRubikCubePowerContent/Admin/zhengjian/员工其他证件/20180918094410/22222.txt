@@ -1,0 +1,787 @@
+<div id="divid" style="border: 1px solid black; border-image: none; overflow: hidden; display: none; position: absolute; cursor: default; background-color: rgb(255, 255, 255);"><table id="AutoComplete_tbl" cellspacing="1" cellpadding="1">
+<tbody >
+<tr id="0" ReturnName="1123"><td bgcolor="#fffafa" border="0"><font size="10">1123</font></td></tr>
+<tr id="1" ReturnName="1124"><td bgcolor="#fffafa" border="0"><font size="2">1124</font></td></tr>
+<tr id="2" ReturnName="1125"><td bgcolor="#fffafa" border="0"><font size="2">1125</font></td></tr>
+<tr id="3" ReturnName="1126"><td bgcolor="#fffafa" border="0"><font size="2">1126</font></td></tr>
+<tr id="4" ReturnName="1127"><td bgcolor="#fffafa" border="0"><font size="2">1127</font></td></tr>
+<tr id="5" ReturnName="112AA8"><td bgcolor="#fffafa" border="0"><font size="2">112AA8</font></td></tr>
+<tr id="6" ReturnName="112BB8"><td bgcolor="#fffafa" border="0"><font size="2">112BB8</font></td></tr>
+<tr id="7" ReturnName="112DD8"><td bgcolor="#fffafa" border="0"><font size="2">112DD8</font></td></tr>
+<tr id="8" ReturnName="112eee8"><td bgcolor="#fffafa" border="0"><font size="2">112eee8</font></td></tr>
+<tr id="9" ReturnName="112ff8"><td bgcolor="#fffafa" border="0"><font size="2">112ff8</font></td></tr>
+</tbody>
+</table>
+</div>
+
+
+
+<tr id="0" style="color: rgb(255, 255, 255); background-color: rgb(153, 153, 153);" ReturnName="C0GA02" ReturnValue="MOHD SIDDIQ">
+<td bgcolor="#fffafa" border="0"><font size="1">MOHD SIDDIQ / C0GA02</font></td></tr>
+
+
+<div class="col-sm-12" id="divid" style="border: 1px solid black; border-image: none; overflow: hidden; display: none; position: absolute; cursor: default; background-color: rgb(255, 255, 255);">
+<table class="col-sm-16" id="AutoComplete_tbl" cellspacing="1" cellpadding="1">
+<tbody>
+<tr class="form-control" id="0" ReturnValue="MOHD SIDDIQ" ReturnName="C0GA02"><td bgcolor="#fffafa" border="0"><font size="1">C0GA02 / MOHD SIDDIQ</font></td></tr>
+<tr class="form-control" id="1" ReturnValue="QUEK JIAN HONG" ReturnName="C0GB50"><td bgcolor="#fffafa" border="0"><font size="1">C0GB50 / QUEK JIAN HONG</font></td></tr>
+<tr class="form-control" id="2" ReturnValue="MALAZA MARIO MALYN DORATA" ReturnName="C0GB50"><td bgcolor="#fffafa" border="0"><font size="1">C0GB50 / MALAZA MARIO MALYN DORATA</font></td></tr>
+<tr class="form-control" id="3" ReturnValue="KRISTY TAY HUI XIAN" ReturnName="C0GB50"><td bgcolor="#fffafa" border="0"><font size="1">C0GB50 / KRISTY TAY HUI XIAN</font></td></tr>
+<tr class="form-control" id="4" ReturnValue="HAIDEE SAMPANG VILLAGRACIA" ReturnName="C0GB50"><td bgcolor="#fffafa" border="0"><font size="1">C0GB50 / HAIDEE SAMPANG VILLAGRACIA</font></td></tr>
+<tr class="form-control" id="5" ReturnValue="TOSHIKAZU KUGIMAYA" ReturnName="C0JSR0"><td bgcolor="#fffafa" border="0"><font size="1">C0JSR0 / TOSHIKAZU KUGIMAYA</font></td></tr>
+<tr class="form-control" id="6" ReturnValue="RAY IGARASHI" ReturnName="C0JSR0"><td bgcolor="#fffafa" border="0"><font size="1">C0JSR0 / RAY IGARASHI</font></td></tr>
+<tr class="form-control" id="7" ReturnValue="Kay Hiramatsu" ReturnName="C0J090"><td bgcolor="#fffafa" border="0"><font size="1">C0J090 / Kay Hiramatsu</font></td></tr>
+<tr class="form-control" id="8" ReturnValue="ONG LAY YEN" ReturnName="C0GA31"><td bgcolor="#fffafa" border="0"><font size="1">C0GA31 / ONG LAY YEN</font></td></tr>
+<tr class="form-control" id="9" ReturnValue="AMARANATHA D" ReturnName="C0LE00"><td bgcolor="#fffafa" border="0"><font size="1">C0LE00 / AMARANATHA D</font></td></tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+.form-control1 {
+  display: block;
+  width: 100%;
+  height: 20px;
+  padding: 6px 12px;
+  font-size: 10px;
+  line-height: 1;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+
+
+
+
+MQuotationFrameBitBtn1Click
+
+
+DataQuery2('UKey','修模資料查詢',QDataModule.TCCQC,12,iArray,QData,qNum);
+
+procedure DataQuery2(iField,iCaption:String;iDataSet:TClientDataSet;iNum:Integer;iArray:Array of String;var vQData:Variant;var oNum:Integer);
+var
+  Data_Query: TData_Query2;
+  i:Integer;
+begin
+  Data_Query:= TData_Query2.Create(Application);
+  Data_Query.Caption := iCaption;
+
+  //iDataSet.FieldCount
+
+  Data_Query.DataQC              := iDataSet;
+  Data_Query.DataQDS.DataSet := Data_Query.DataQC;
+  Data_Query.DataQDS.Enabled := True;
+
+  Data_Query.cc.AfterGetRecords      := iDataSet.AfterExecute;
+  Data_Query.DataQC.BeforeGetRecords := Data_Query.cc.BeforeGetRecords;
+  Data_Query.DataQC.AfterGetRecords  := Data_Query.MyAfterGetRecords;
+
+  Data_Query.kField := iField;
+  Data_Query.rNum   := iNum;
+  Data_Query.QData  := Null;
+  Data_Query.qNum   := 0;
+
+  SetLength(Data_Query.rParam,Length(iArray)+1);
+  for i:= 0 to Length(iArray)-2 do
+     Data_Query.rParam[i] := iArray[i+1];
+
+  try
+     Data_Query.ShowModal;
+     vQData := Data_Query.QData;
+     oNum   := Data_Query.qNum;
+  finally
+     Data_Query.Release;
+  end;
+
+end;
+
+
+
+/* Formatted on 2017/12/20 15:25 (Formatter Plus v4.8.8) */
+SELECT formno, projectcode, requestreason, requestdate, plantno,
+       plantwarehouseid, planner, amount, chargedept, receivewh, addreviewer1,
+       addreviewer2, lastmodifiedby, lastmodifiedon, createdby, createdon
+  FROM rdwp_pmamaster;
+  
+  edit rdwp_pmamaster;
+  edit RDWP_PRDetail;
+  edit RDWP_PRMaster;
+  edit RDWP_pmadetail;
+  
+  select * from RDWP_PRMaster,RDWP_PRDetail,rdwp_pmamaster,RDWP_pmadetail,FNDA_Form
+  where RDWP_PRMaster.FORMNO = RDWP_PRDetail.FORMNO and FNDA_Form.FORMNO = RDWP_PRMaster.FORMNO
+  ;
+
+
+资格
+
+<asp:BoundField HeaderText="FormNo" DataField="BUDGETLIFECYCLE" />
+                    <asp:BoundField HeaderText="PRNo" DataField="PROJECTCODE" />
+                    <asp:BoundField HeaderText="Form status" DataField="PROJECTNAME" />
+                    <asp:BoundField HeaderText="Part No" DataField="PM" />
+                    <asp:BoundField HeaderText="Part Name" DataField="APPLICANT" />
+                    <asp:BoundField HeaderText="Applicant" DataField="PROFITCENTERCODE" />
+                    <asp:BoundField HeaderText="Buyer" DataField="PROFITCENTERDESC" />
+                    <asp:BoundField HeaderText="Free or Charge" DataField="CHARGEDEPT" />
+                    <asp:BoundField HeaderText="Supplier Code" DataField="CUSTOMERNICKNAME" />
+                    <asp:BoundField HeaderText="PR Qty" DataField="PRODUCT" />
+                    <asp:BoundField HeaderText="PO Qty" DataField="STARTDATE" />
+                    <asp:BoundField HeaderText="Adjusted Qty" DataField="ENDDATE" />
+
+/* Formatted on 2017/12/22 09:10 (Formatter Plus v4.8.8) */
+SELECT formno, partno, plant, plantcurrency, plantcost, prqty, receiveqty,
+       adjustqty, adjustreason, suppliercode, suppliername, estimateprice,
+       poqty, manufacturer, manufacturerpn, remark, lastmodifiedby,
+       lastmodifiedon, createdby, createdon
+  FROM rdwp_prdetail;
+ /* Formatted on 2017/12/22 09:16 (Formatter Plus v4.8.8) */
+SELECT formno, prno, addreviewer1, addreviewer2, projectcode, currency,
+       txamount, homecurrency, homeamount, exchangerate, pauserid,
+       requireddate, originalrequiredate, buyerid, amount, chargedept,
+       receivewh, freeorcharge, moduleid, lastmodifiedby, lastmodifiedon,
+       createdby, createdon
+  FROM rdwp_prmaster
+  edit RDWP_PRMaster;
+  edit Rdwp_Prdetail ;
+  EDIT Rdwp_POdetail ;
+  edit Fnda_Form;
+  
+
+Select A.Formno,  C.Prno, B.Formstatus, D.Englishname Applicant,
+       E.Englishname Buyer,
+       C.Freeorcharge,A.Partno, (A.Suppliercode || '_' || A.Suppliername) Supplier,
+       A.Prqty, A.Poqty, A.Adjustqty
+  From Rdwp_Prdetail A, Fnda_Form B, Rdwp_Prmaster C, Fnda_User D,
+       Fnda_User E
+ Where C.Formno = B.Formno
+   And A.Formno = C.Formno
+    And A.Formno = B.Formno
+   And B.Applicantid = D.Userid(+)
+   And C.Buyerid = E.Userid(+)
+   And A.Suppliercode = :Suppliercode
+   And C.Formno = :Formno
+   And C.Buyerid = :Buyerid
+   And A.Partno = :Partno
+   And C.Prno = :Prno
+   And B.Applicantid = :Applicantid
+   And C.Freeorcharge = :Freeorcharge
+    Order By C.Lastmodifiedon;
+   ;
+
+
+   <asp:TemplateField>
+                                <ItemTemplate>
+                                    <asp:Label ID="LASTMODIFIEDON" runat="server" Text='<%# Bind("LASTMODIFIEDON") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField>
+                                <ItemTemplate>
+                                    <asp:Label ID="CREATEDBY" runat="server" Text='<%# Bind("CREATEDBY") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField>
+                                <ItemTemplate>
+                                    <asp:Label ID="CREATEDON" runat="server" Text='<%# Bind("CREATEDON") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+
+
+
+
+
+ var SupplierCodeField = ((TextBox)gvDataList.Rows[i].Cells[10].FindControl("txtEditSupplierCode")).Text == "" ? ((TextBox)gvDataList.Rows[i].Cells[10].FindControl("txtShowSupplierCode")).Text : ((TextBox)gvDataList.Rows[i].Cells[10].FindControl("txtEditSupplierCode")).Text;
+
+
+
+
+PR  LIST 10 2line 
+
+
+
+PO LIST 2 LIAE
+
+
+button type="button" class="btn btn-default"      onclick="QueryByWindowOpen('AllEmployee','', false,''); return ShowProgressBar();">  
+
+<span class="glyphicon glyphicon-search" aria-hidden="true" align="left"></span> 
+
+
+元旦放假	Leave	2018/1/1	8.0 
+RDWPM09_2 submitfunction develop 	Coding	2018/1/2	4.0 
+RDWPM09 transfer to PO develop 	Coding	2018/1/2	4.0 
+RDWPM09_2 gridview develop 	Coding	2018/1/3	5.0 
+RDWPM09_2 revising function develop 	Coding	2018/1/3	3.0 
+RDWPM09_2 cancel button development	Coding	2018/1/4	2.0 
+RDWPM09_2 save button development 	Coding	2018/1/4	6.0 
+RDWPM09_2 save function develop 	Coding	2018/1/5	4.0 
+RDWPM09_2 submit function develop 	Coding	2018/1/5	4.0 
+
+
+edit RDWP_POMaster;
+edit RDWP_PODetail where FORMNO = :FORMNO;
+edit RDWP_PRDetail where formno = 'AWD1705170665';;
+edit RDWP_PRMaster where formno = 'AWD1705170665';
+edit fnda_form;
+
+edit RDWM_ShiftMaster;
+edit RDWM_ShiftDetail;
+
+select A.FORMNO,a.RECEIVEWHFROM,a.RECEIVEWHTO,c.FORMSTATUS,a.TXAMOUNT,D.ENGLISHNAME,v.ename pendingapprover
+ from RDWM_ShiftMaster  A,RDWM_ShiftDetail B , FNDA_FORM C,FNDA_USER D,(SELECT *
+          FROM bpmv7_pendinglist_v
+        MINUS
+        SELECT *
+          FROM bpmv7_pendinglist_v
+         WHERE docno IN (SELECT   docno
+                             FROM bpmv7_pendinglist_v
+                         GROUP BY docno
+                           HAVING COUNT (*) > 1) AND step NOT LIKE 'Proxy%') v
+WHERE A.FORMNO = B.FORMNO 
+and A.FORMNO = c.FORMNO
+AND c.APPLICANTID = D.USERID(+)
+and c.formno = v.docno
+;
+
+edit rdwp_itemmaster ;
+select A.FORMNO,a.RECEIVEWHFROM,a.RECEIVEWHTO,c.FORMSTATUS,a.TXAMOUNT,D.ENGLISHNAME
+ from RDWM_ShiftMaster  A,RDWM_ShiftDetail B , FNDA_FORM C,FNDA_USER D,rdwp_itemmaster f
+ 
+ WHERE A.FORMNO = B.FORMNO 
+and A.FORMNO = c.FORMNO
+AND c.APPLICANTID = D.USERID(+)
+and b.partno = f.partno; 
+
+ onclick=\"DeleteRow('LearnItem" + rowID + "'," + rowID + ")\" 
+001   採購              1  2233              
+
+002   專案申請                      
+
+003   Free Charge                   
+
+004   Consign                       
+
+005   借測入庫                      
+
+006   交換入庫                      
+
+007   出區測試                      
+
+008   內部移轉入                    
+
+010   自行組裝入                    
+
+019   改機入庫                      
+
+024   拆解入庫    
+
+问你个问题哦。ItemTemplate 里面的textbox 后面有个放大镜。怎么取index呢。不是edit index
+
+ 1  - 30
+
+ 1-10 
+
+ 20
+1-2 
+
+11-12
+2
+1234 5678
+action  = pcc
+aciton  =mc
+(RDWPM08_1?Role=PCC)
+
+window.opener.document.getElementById('#queryiLoadstPostingItem').click();
+ 001.47300.0001      
+
+81.3MJ01.001G       
+
+001.00IVY.0011    
+
+
+
+
+/* Formatted on 2018/01/29 17:32 (Formatter Plus v4.8.8) */
+CREATE OR REPLACE FUNCTION pmcsdev.Material_co_report (
+   instartdate   VARCHAR,
+   inenddate     VARCHAR
+)
+   RETURN Material_co_tab
+/******************************************************************************
+   NAME:       PAJ_CO_Report
+   AUTHOR:     Janny CH Lin
+   PURPOSE:    Performance Adjustment CO Report使用
+   CREATE:     2017/07/31
+   NOTICE:
+
+******************************************************************************/
+IS
+   l_Material_tab         Material_co_tab      := Material_co_tab ();
+   n                 NUMBER          := 0;
+   v_cno             VARCHAR2 (15);
+   v_postingdate     DATE;
+   v_company         VARCHAR2 (255);
+   v_sender_cctr     VARCHAR2 (255);
+   v_costelement     VARCHAR2 (255);
+   v_sender_amount   NUMBER;
+   v_currency        VARCHAR2 (255);
+   v_receiver_cctr   VARCHAR2 (255);
+   v_receiver_btp    VARCHAR2 (255);
+   v_receiver_biz    VARCHAR2 (255);
+   v_receiver_prj    VARCHAR2 (255);
+   v_issue_prj       VARCHAR2 (255);
+   v_doc_text        VARCHAR2 (255);
+   v_remark          VARCHAR2 (1000);
+   v_assignment      VARCHAR2 (255);
+   v_sapacct         VARCHAR2 (1);
+
+   CURSOR c1
+   IS
+      SELECT   ap.formno, COUNT (*) AS linecount,
+               COUNT (DISTINCT accountcode) AS accountcount
+          FROM fnda_form ap,
+               padj_formheader m,
+               padj_formdetail s,
+               padj_postingitem s2
+         WHERE ap.formno = m.formno
+           AND m.formno = s.formno
+           AND s.formno = s2.formno
+           AND s.itemno = s2.itemno
+           AND TO_CHAR (m.confirmdate, 'yyyy/mm/dd') BETWEEN instartdate
+                                                         AND inenddate
+           AND sapaccount = 'CO'
+           AND formstatus IN ('FIN Verify', 'Closed')
+      GROUP BY ap.formno;
+
+   CURSOR c2
+   IS
+      SELECT   ap.formno AS cno, ap.companyno AS company,
+               TRUNC (SYSDATE) AS postingdate, m.currency AS currency,
+               DECODE (v1.iscreatedbyprjpnl,
+                       '0', 'DEPT',
+                       '1', m.issuepcode,
+                       NULL, 'DEPT',
+                       'DEPT'
+                      ) AS issuepcode,
+               s2.postingkey AS ptkey, s2.chargedept AS cdeptno,
+               s2.accountcode AS ACCOUNT, s2.amount AS amount,
+               s2.assignment AS assignment, s2.costcenter AS cost_center,
+               s2.profitcentercode AS profit_center,
+               DECODE (v2.iscreatedbyprjpnl,
+                       '0', 'DEPT',
+                       '1', s2.internalorder,
+                       NULL, s2.internalorder,
+                       'DEPT'
+                      ) AS internal_order,
+               s2.billtoparty AS billtoparty,
+               s2.businesstype AS business_type, s2.referencekey3 AS refkey3,
+               REPLACE (REPLACE (REPLACE (s2.itemremark, ';', '"'), ';', '&'),
+                        '',
+                        ''
+                       ) AS item_text,
+               REPLACE (REPLACE (REPLACE (ap.remark, ';', '"'), ';', '&'),
+                        '',
+                        ''
+                       ) AS remark
+          FROM fnda_form ap,
+               padj_formheader m,
+               padj_formdetail s,
+               padj_postingitem s2,
+               eai_pcode_subsys v1,
+               eai_pcode_subsys v2
+         WHERE ap.formno = m.formno
+           AND m.formno = s.formno
+           AND s.formno = s2.formno
+           AND s.itemno = s2.itemno
+           AND ap.formno = v_cno
+           AND m.issuepcode = v1.code(+)
+           AND s2.internalorder = v2.code(+)
+      ORDER BY ap.formno, s.itemno, s2.itemno, s2.postingkey;
+BEGIN
+   FOR i IN c1
+   LOOP
+      v_cno := i.formno;
+
+      SELECT COUNT (DISTINCT sapaccount)
+        INTO v_sapacct
+        FROM padj_formdetail
+       WHERE formno = v_cno;
+
+      IF v_sapacct = '1'
+      THEN
+         IF i.accountcount > 1
+         THEN
+            v_company := '';
+            v_sender_cctr := '';
+            v_costelement := '';
+            v_sender_amount := 0;
+            v_currency := '';
+            v_receiver_cctr := '';
+            v_receiver_btp := '';
+            v_receiver_biz := '';
+            v_receiver_prj := '';
+            v_issue_prj := '';
+            v_doc_text := '';
+            v_remark := '';
+            v_assignment := '';
+
+            FOR j IN c2
+            LOOP
+               l_paj_tab.EXTEND;
+               n := n + 1;
+
+               IF j.ptkey = '40'
+               THEN
+                  v_sender_cctr := 'HQPCW000';
+                  v_receiver_cctr := j.cost_center;
+               ELSE
+                  v_sender_cctr := j.cost_center;
+                  v_receiver_cctr := 'HQPCW000';
+               END IF;
+
+               v_postingdate := j.postingdate;
+               v_company := j.company;
+               v_costelement := j.ACCOUNT;
+               v_sender_amount := j.amount;
+               v_currency := j.currency;
+               v_receiver_btp := j.billtoparty;
+               v_receiver_biz := j.business_type;
+               v_receiver_prj := j.internal_order;
+               v_issue_prj := j.issuepcode;
+               v_doc_text := j.item_text;
+               v_remark := j.remark;
+               v_assignment := j.assignment;
+               l_paj_tab (n) :=
+                  paj_co_obj (v_postingdate,
+                              v_company,
+                              v_sender_cctr,
+                              NULL,
+                              NULL,
+                              NULL,
+                              v_issue_prj,
+                              v_costelement,
+                              v_sender_amount,
+                              v_currency,
+                              v_receiver_cctr,
+                              v_receiver_btp,
+                              NULL,
+                              v_receiver_biz,
+                              v_receiver_prj,
+                              v_doc_text,
+                              v_remark,
+                              v_cno,
+                              v_assignment
+                             );
+            END LOOP;
+         ELSE
+            v_company := '';
+            v_sender_cctr := '';
+            v_costelement := '';
+            v_sender_amount := 0;
+            v_currency := '';
+            v_receiver_cctr := '';
+            v_receiver_btp := '';
+            v_receiver_biz := '';
+            v_receiver_prj := '';
+            v_issue_prj := '';
+            v_doc_text := '';
+            v_remark := '';
+            v_assignment := '';
+
+            FOR k IN c2
+            LOOP
+               IF k.ptkey = '40'
+               THEN                                               -- receiver
+                  l_paj_tab.EXTEND;
+                  n := n + 1;
+                  v_costelement := k.ACCOUNT;
+                  v_sender_amount := k.amount;
+                  v_currency := k.currency;
+                  v_receiver_cctr := k.cost_center;
+                  v_receiver_btp := k.billtoparty;
+                  v_receiver_biz := k.business_type;
+                  v_receiver_prj := k.internal_order;
+                  v_issue_prj := k.issuepcode;
+                  v_doc_text := k.item_text;
+                  v_remark := k.remark;
+                  v_assignment := k.assignment;
+               ELSE                                               --50, Sender
+                  v_postingdate := k.postingdate;
+                  v_company := k.company;
+                  v_sender_cctr := k.cost_center;
+                  l_paj_tab (n) :=
+                     paj_co_obj (v_postingdate,
+                                 v_company,
+                                 v_sender_cctr,
+                                 NULL,
+                                 NULL,
+                                 NULL,
+                                 v_issue_prj,
+                                 v_costelement,
+                                 v_sender_amount,
+                                 v_currency,
+                                 v_receiver_cctr,
+                                 v_receiver_btp,
+                                 NULL,
+                                 v_receiver_biz,
+                                 v_receiver_prj,
+                                 v_doc_text,
+                                 v_remark,
+                                 v_cno,
+                                 v_assignment
+                                );
+               END IF;
+            END LOOP;
+         END IF;
+      END IF;
+   END LOOP;
+
+   RETURN l_paj_tab;
+END;
+/
+
+
+
+/* Formatted on 2018/01/29 17:32 (Formatter Plus v4.8.8) */
+CREATE OR REPLACE FUNCTION pmcsdev.Material_co_report (
+   instartdate   VARCHAR,
+   inenddate     VARCHAR
+)
+   RETURN Material_co_tab
+/******************************************************************************
+   NAME:       PAJ_CO_Report
+   AUTHOR:     Janny CH Lin
+   PURPOSE:    Performance Adjustment CO Report使用
+   CREATE:     2017/07/31
+   NOTICE:
+
+******************************************************************************/
+IS
+   l_Material_tab         Material_co_tab      := Material_co_tab ();
+   n                 NUMBER          := 0;
+   v_cno             VARCHAR2 (15);
+   v_postingdate     DATE;
+   v_company         VARCHAR2 (255);
+   v_sender_cctr     VARCHAR2 (255);
+   v_costelement     VARCHAR2 (255);
+   v_sender_amount   NUMBER;
+   v_currency        VARCHAR2 (255);
+   v_receiver_cctr   VARCHAR2 (255);
+   v_receiver_btp    VARCHAR2 (255);
+   v_receiver_biz    VARCHAR2 (255);
+   v_receiver_prj    VARCHAR2 (255);
+   v_issue_prj       VARCHAR2 (255);
+   v_doc_text        VARCHAR2 (255);
+   v_remark          VARCHAR2 (1000);
+   v_assignment      VARCHAR2 (255);
+   v_sapacct         VARCHAR2 (1);
+
+   CURSOR c1
+   IS
+      SELECT   AP.FORMNO, COUNT (*) LINECOUNT
+ 
+            FROM     FNDA_FORM AP, RDWM_SHIFTMASTER M, RDWM_SHIFTDETAIL S
+
+            WHERE    AP.FORMNO = M.FORMNO AND M.FORMNO = S.FORMNO
+
+            --AND FORMSTATUS IN ('FIN VERIFY', 'CLOSED')
+            GROUP BY AP.FORMNO;
+
+   CURSOR c2
+   IS
+                  SELECT   AP.FORMNO AS CNO, AP.COMPANYNO AS COMPANY,
+                     TRUNC (SYSDATE) AS POSTINGDATE, M.CURRENCY AS CURRENCY,
+                     'HQ' || S.CHARGEDEPTFROM AS CHARGEDEPTFROM,
+                     S.CHARGEDEPTIN AS CDEPTNO, S.SHIFTPRICE AS AMOUNT,
+                     S.PROJECTCODEFROM AS PROJECTFROM,
+                     S.PROJECTCODETO || P.PROJECTNAME || S.PARTNO AS DOCTEXT,
+                     S.FORMNO || AP.APPLICANTID AS ASSIGNMENT
+                FROM FNDA_FORM AP,
+                     RDWM_SHIFTMASTER M,
+                     RDWM_SHIFTDETAIL S,
+                     PBMP_PCODEPROFILE P
+               WHERE AP.FORMNO = M.FORMNO AND M.FORMNO = S.FORMNO
+                     --AND AP.FORMNO = V_CNO
+                     AND S.PROJECTCODETO = P.PROJECTCODE(+)
+            ORDER BY AP.FORMNO;
+BEGIN
+   FOR i IN c1
+   LOOP
+      v_cno := i.formno;
+
+      SELECT COUNT (DISTINCT sapaccount)
+        INTO v_sapacct
+        FROM padj_formdetail
+       WHERE formno = v_cno;
+
+      IF v_sapacct = '1'
+      THEN
+         IF i.accountcount > 1
+         THEN
+            v_company := '';
+            v_sender_cctr := '';
+            v_costelement := '';
+            v_sender_amount := 0;
+            v_currency := '';
+            v_receiver_cctr := '';
+            v_receiver_btp := '';
+            v_receiver_biz := '';
+            v_receiver_prj := '';
+            v_issue_prj := '';
+            v_doc_text := '';
+            v_remark := '';
+            v_assignment := '';
+
+            FOR j IN c2
+            LOOP
+               l_paj_tab.EXTEND;
+               n := n + 1;
+
+               IF j.ptkey = '40'
+               THEN
+                  v_sender_cctr := 'HQPCW000';
+                  v_receiver_cctr := j.cost_center;
+               ELSE
+                  v_sender_cctr := j.cost_center;
+                  v_receiver_cctr := 'HQPCW000';
+               END IF;
+
+               v_postingdate := j.postingdate;
+               v_company := j.company;
+               v_costelement := j.ACCOUNT;
+               v_sender_amount := j.amount;
+               v_currency := j.currency;
+               v_receiver_btp := j.billtoparty;
+               v_receiver_biz := j.business_type;
+               v_receiver_prj := j.internal_order;
+               v_issue_prj := j.issuepcode;
+               v_doc_text := j.item_text;
+               v_remark := j.remark;
+               v_assignment := j.assignment;
+               l_paj_tab (n) :=
+                  paj_co_obj (v_postingdate,
+                              v_company,
+                              v_sender_cctr,
+                              NULL,
+                              NULL,
+                              NULL,
+                              v_issue_prj,
+                              v_costelement,
+                              v_sender_amount,
+                              v_currency,
+                              v_receiver_cctr,
+                              v_receiver_btp,
+                              NULL,
+                              v_receiver_biz,
+                              v_receiver_prj,
+                              v_doc_text,
+                              v_remark,
+                              v_cno,
+                              v_assignment
+                             );
+            END LOOP;
+         ELSE
+            v_company := '';
+            v_sender_cctr := '';
+            v_costelement := '';
+            v_sender_amount := 0;
+            v_currency := '';
+            v_receiver_cctr := '';
+            v_receiver_btp := '';
+            v_receiver_biz := '';
+            v_receiver_prj := '';
+            v_issue_prj := '';
+            v_doc_text := '';
+            v_remark := '';
+            v_assignment := '';
+
+            FOR k IN c2
+            LOOP
+               IF k.ptkey = '40'
+               THEN                                               -- receiver
+                  l_paj_tab.EXTEND;
+                  n := n + 1;
+                  v_costelement := k.ACCOUNT;
+                  v_sender_amount := k.amount;
+                  v_currency := k.currency;
+                  v_receiver_cctr := k.cost_center;
+                  v_receiver_btp := k.billtoparty;
+                  v_receiver_biz := k.business_type;
+                  v_receiver_prj := k.internal_order;
+                  v_issue_prj := k.issuepcode;
+                  v_doc_text := k.item_text;
+                  v_remark := k.remark;
+                  v_assignment := k.assignment;
+               ELSE                                               --50, Sender
+                  v_postingdate := k.postingdate;
+                  v_company := k.company;
+                  v_sender_cctr := k.cost_center;
+                  l_paj_tab (n) :=
+                     paj_co_obj (v_postingdate,
+                                 v_company,
+                                 v_sender_cctr,
+                                 NULL,
+                                 NULL,
+                                 NULL,
+                                 v_issue_prj,
+                                 v_costelement,
+                                 v_sender_amount,
+                                 v_currency,
+                                 v_receiver_cctr,
+                                 v_receiver_btp,
+                                 NULL,
+                                 v_receiver_biz,
+                                 v_receiver_prj,
+                                 v_doc_text,
+                                 v_remark,
+                                 v_cno,
+                                 v_assignment
+                                );
+               END IF;
+            END LOOP;
+         END IF;
+      END IF;
+   END LOOP;
+
+   RETURN l_paj_tab;
+END;
+/ML0000  ML0001userAuthority
+   
+
+(TextBox)Master.FindControl("ContentPlaceHolder1").FindControl("ContentPlaceHolder1").FindControl("txtIssueDept");            
+
+
+select * from BPMV8_PENDINGLIST_V PENDINGLIST where formno = :formno;
+edit fnda_form where formno = :formno;
+edit RDWP_PAMASTER where formno = :formno;
+
+F201807060001
+
+
+0001    w  free
+0001    w  charge
+0001    w free 
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   

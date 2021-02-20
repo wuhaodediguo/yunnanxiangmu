@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CFF</title>
+
+    <script src="Resource/JS/tssJS.all.js" type="text/javascript"></script>
+    <script src="Resource/JS/jquery.js" type="text/javascript"></script>
+<style type="text/css">
+
+html { box-sizing: border-box; }
+html,body { font-size:14px; font-family:'微软雅黑'; color:#535353; line-height:26px}
+a:link { color:#535353; text-decoration:none; }
+a:visited { text-decoration:none; color:#535353; }
+a:hover { text-decoration:none; color:#16759b; }
+a:active { text-decoration:none; color:#535353; }
+a img, img { border:none;vertical-align:middle; max-width:100%; } 
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, blockquote, pre, form,input,select,textarea,button, fieldset, table, th, td, span,form,p,a,img,object,embed  { padding:0; margin:0; list-style:none; }
+input, textarea, select, button, file { vertical-align:middle}
+h1, h2, h3, h4, h5, h6 { font-weight:normal}
+
+.clearfix { *zoom: 1; }
+.clearfix:before,
+.clearfix:after { display: table; line-height: 0; content: ""; }
+.clearfix:after { clear: both; }
+
+.form-wrapper {
+  width: 420px;
+  position: absolute; top: 15px; left: 10px;
+  overflow:hidden;
+  border-width:1px;
+  border-style:solid;
+  border-color:#dedede #bababa #aaa #bababa;
+  box-shadow:0 1px 1px rgba(255,255,255,.1),0 3px 0 #bbb,0 1px 0 #aaa,0 1px 1px #444;
+  border-radius:10px;
+  background-color:#f6f6f6;
+  background-image:linear-gradient(top,#f6f6f6,#eae8e8);
+}
+.form-wrapper #param1 {
+  width:300px;
+  height:20px;
+  padding:10px 5px;
+  float:left;
+  font: bold 16px '微软雅黑','trebuchet MS','Tahoma';
+  border:1px solid #ccc;
+  box-shadow:0 1px 1px #ddd inset,0 1px 0 #fff;
+  border-radius:3px;
+}
+.form-wrapper #param1:focus {
+  outline:0;
+  border-color:#aaa;
+  box-shadow:0 1px 1px #bbb inset;
+}
+.form-wrapper #param1:-webkit-input-placeholder,
+.form-wrapper #param1:-moz-placeholder,
+.form-wrapper #param1:-ms-input-placeholder {
+  color:#999;
+  font-weight:normal;
+}
+.form-wrapper #submit {
+  float:right;
+  border:1px solid #00748f;
+  height:42px;
+  width:108px;
+  padding:0;
+  cursor:pointer;
+  font:bold 15px Arial,Helvetica;
+  color:#fafafa;
+  text-transform:uppercase;
+  background-color:#0483a0;
+  border-radius:3px;
+  text-shadow:0 1px 0 rgba(0,0,0,.3);
+  box-shadow:0 1px 0 rgba(255,255,255,0.3) inset,0 1px 0 #fff;
+}
+.form-wrapper #submit:hover,.form-wrapper #submit:focus {
+  background-color:#31b2c3;
+}
+.form-wrapper #submit:active {
+  outline:0;
+  box-shadow:0 1px 4px rgba(0,0,0,0.5) inset;
+}
+
+p,form,ol,ul,li,h3,menu { list-style:outside none none; }
+.mh-wrap { margin: 5px auto; width: 780px; }
+.mh-wrap ul { height: auto; }
+.mh-wrap ul li {
+  position:relative;
+  border-bottom:1px solid #f5f5f5;
+  margin-bottom:8px;
+  font-size: 14px;
+  color:#666;
+}
+.mh-wrap ul li:nth-child(1) { color:#3eaf0e; }
+.mh-wrap ul li p { line-height:20px; }
+
+.mh-wrap ul li .after {
+  position:absolute;
+  left:-16px;
+  top: .6em;
+  width:8px;
+  height:8px;
+  background:#ddd;
+  border-radius:6px;
+}
+.mh-wrap ul li:nth-child(1) .after { background:#3eaf0e; }
+.mh-icon { background:url(../Image/icon1.png) no-repeat 0 0; }
+.mh-icon-new {
+  position:absolute;
+  left:-20px;
+  top: .8em;
+  width:41px;
+  height:18px;
+  margin-left:-41px;
+  margin-top:-9px;
+  background-position:0 -58px;
+}
+
+#tabmenu { height: 44px; }
+#tabmenu ul { 
+  width: 780px; height: 22px; margin: 0 auto; padding-top: 10px;
+  list-style-type: none; border-bottom: 1px solid #95B8E7;
+}
+#tabmenu li { 
+  font-size: 14px;
+  text-align: center; 
+  float:left;
+  width: 120px; 
+  line-height: 21px;
+  background-color: #EDF6FC;
+  cursor:pointer;
+  margin-left: 5px;
+  border-radius: 4px 4px 0 0;
+  border: 1px solid #95B8E7;
+  border-bottom: 0;
+}
+#tabmenu li.selected { background-color: #FFF; color: #000; cursor: default; height: 22px; }
+
+
+.foot { background:#333; color:#ccc;  line-height:24px; z-index:99; position:relative; }
+.footer { border-bottom:1px solid #2e2e2e; padding:30px 0;}
+.footer a { color:#ccc; }
+.footer ul li { float:left; width:360px; height:140px; }
+.footer ul li.fmsg { width:320px; padding:15px 40px; margin:0px 10px; border-right:1px solid #666; font-size:15px; }
+.footer ul li.fmsg h3{ font-size:20px; height:48px; color:#ddd }
+.footer ul li.fmsg>p>a { margin-right: 20px; }
+.footer ul li.ewm { width:200px; border:none;}
+.footer ul li.ewm img { width:130px; margin: 10px 0 5px 100px}
+.footer ul li.ewm p { width:130px; margin: 0 115px}
+
+.copyright { text-align:center; border-top:1px solid #3b3b3b; height:50px; line-height:50px;}
+.copyright a { color:#ccc; }
+
+.top { position: relative; height: 132px; background-color: #404040; color: #fff; }
+
+#d0 {
+  position: absolute; left: 80px; top: 30px; background: url(../Image/logo.png) no-repeat center; 
+  width: 90px; height: 90px; background-size : cover;
+}
+#d1 { position: absolute; right: 30px; top: 14px; line-height: 15px;}
+#d1>a { display: inline-block; border-right:1px solid #666; padding: 0 20px;  height: 15px; color: #fff; }
+#d2 { position: absolute; left: 150px; bottom: 15px; line-height: 30px; }
+#d2>a { display: inline-block;  font-size: 1.1em; padding: 0 75px;  height: 30px; color: #fff; }
+
+.main {
+  height: 500px;
+  position: relative;
+  background: url(../Image/lc.jpg) no-repeat center; background-size : cover;
+}
+
+#result {
+  display: none;
+  min-height: 300px;
+}
+
+</style>
+
+<script type="text/javascript">
+ 
+
+</script>
+
+</head>
+
+<body>
+
+<div class="top">
+  <div id="d0"></div>
+  <div id="d1">
+    <a href="#">log In</a>
+    <a href="#">Sign up</a>
+    <a href="#">Locations</a>
+    <a href="#">China-English</a>
+    <a href="#">My Profile</a>
+  </div>
+
+  <div id="d2">
+    <a href="#">QUICK START</a>
+    <a href="#">Tracking</a>
+    <a href="#">Shipping</a>
+    <a href="#">Service</a>
+  </div>
+
+</div>
+
+<div class="main">
+  <div class="form-wrapper">
+    <input type="text" id="param1" placeholder="Enter your OrderNum or PhoneNum ..." required>
+    <input type="button" value="Tracking" id="submit" onclick="query();">
+  </div>
+
+</div>
+
+<div id="result">
+  <div id="tabmenu">
+    <ul>
+    
+    </ul>
+  </div>
+  <div class="mh-wrap">
+      <ul>
+
+      </ul>
+  </div>
+</div>
+
+<div class="foot">
+  <div class="footer">
+    <div style="max-width:1200px; margin:0px auto"> 
+       <ul>
+         <li class="fmsg">
+           <h3>THIS SITE</h3>
+           <p>
+              <a href="#">Tracking</a>
+              <a href="#">Shipping</a>
+              <a href="#">Services</a>
+           </p>
+           <p> 
+              <a href="#">My Profile</a>
+              <a href="#">About US</a>
+              <a href="#">Locations</a>
+           </p>
+           <p>
+              <a href="#">Help Centre</a>
+              <a href="#">QUICK START</a>
+           </p>
+         </li>
+         <li class="fmsg">
+           <h3>CONNECT WITH US</h3>
+           <p>Purok9 Tacay Rd., Pinsao Proper,Baguio City, Philippines2600</p>
+           <p>Telephone: 4008989899</p>
+           <p>Email: service@cff.com</p>
+         </li>
+         <li class="ewm">
+          <!-- <img src="img/index/boubei-wx.png" alt="公众号"/>  -->
+          <p>CFF</p>
+         </li>
+         <div style="overflow:hidden; clear:both; height:0; padding:0;margin:0;"></div>
+       </ul>
+    </div> 
+  </div>     
+     <div class="copyright">
+        <a target="_blank" href="#" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:white;">Copyright ©2018 - 2028 cotels.vip, Inc. All rights reserved.</p></a>
+      </div>
+</div>
+
+<script type="text/javascript">
+
+    var result;
+
+    function query() {
+        var paramVal = $("#param1").val();
+        params = { "strictQuery": true };
+
+        if (!paramVal) {
+            return $("#param1").focus();
+        };
+
+        if (/^[1][3,4,5,6,7,8,9][0-9]{9}$/.test(paramVal)) {
+            params.sjphone = paramVal;
+        }
+        else {
+            params.oto = paramVal;
+        }
+        $.ajax({
+            type: "post",
+            contentType: 'application/json',
+            url: "../WebService/Logistics.asmx/GetLogisticsInfo",
+            data: "{'LogisticsNo':'" + params.oto + "'}",
+            dataType: "json",
+            success: function (Json) {
+                result = JSON.parse(Json.d);
+                if (result.length == 0) {
+                    return alert("no TO find, please check your input condition is correct.");
+                };
+                $("#result").show(true);
+
+                $("#tabmenu ul").html("");
+                var li = document.createElement("li");
+                $(li).text(params.oto);
+                $(li).addClass("selected");
+                $("#tabmenu ul").append(li);
+                $(".mh-wrap ul").html("");
+                var j = 0;
+                $.each(result, function (i, scan) {
+                    var html = "<p>【" + scan.TakeTime + "】" + scan.Information + "<p/><span class='after'></span>";
+                    if (j == 0) {
+                        html += "<i class='mh-icon mh-icon-new'></i>";
+                    }
+                    var li = document.createElement("li");
+                    $(li).html(html);
+                    $(".mh-wrap ul").append(li);
+                    j++;
+                });
+
+            }, error: function (xmlReq, err, c) {
+                alert(xmlReq.statusText);
+                alert(xmlReq.responseText);
+            }
+        })
+
+
+    }
+
+    function showTO(index) {
+        
+
+        var item = result[index];
+        var guiji = item.guiji || "", fguiji = item.fguiji || "";
+        var scans = (guiji + "\n" + fguiji).split("\n");
+        scans.each(function (i, scan) {
+            
+        });
+
+        // 滚动条向下滚动200px;
+        window.scrollTo(0, 320); // 滚到底 document.body.scrollHeight
+    }
+
+</script>
+
+</body>
+</html>
+

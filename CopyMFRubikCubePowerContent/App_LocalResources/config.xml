@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageset xmlns="">
+  <language>
+    <name>zh-cn</name>
+    <icon>cn.png</icon>
+    <title>中文版</title>
+  </language>
+  <language>
+    <name>en</name>
+    <icon>us.png</icon>
+    <title>English</title>
+  </language>
+</languageset>

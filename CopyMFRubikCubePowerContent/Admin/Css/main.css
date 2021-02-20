@@ -1,0 +1,93 @@
+﻿body,h1 
+{
+	font-family:Microsoft YaHei;
+}
+
+/*scrollbar*/
+::-webkit-scrollbar
+{
+	width: 5px;
+	height: 15px;
+	background-color: #eee;
+    overflow-y:scroll;
+}
+
+/*scrollbar*/
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #999999;
+}
+
+.id{ width:60px;}
+.parent{ background:#FAFAD2;}
+.main-footer{ font-family:'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;}
+.main-footer .pull-right{ font-family:Microsoft YaHei;}
+
+.content-wrapper-simple{ background:#ECF0F5}
+
+.label-back {
+  background-color: #6C7B8B;
+  color: #fff;
+}
+
+.tips{ color:#999;}
+.sort a{ color:#333;}
+.sort img{ margin:-5px 0 0 5px}
+.report-tb td{ border-bottom:solid 1px #F4F4F4;}
+th.report{ text-align:center;}
+.report{ border-left:solid 1px #F4F4F4;}
+
+/*Pager*/
+#pager {border-top:solid 1px #F5F5F5; padding:10px 0; margin-top:-10px; background:#FAFAFA; overflow:hidden;}
+div.Pager{font-size:9pt; text-align:right;}
+div.Pager .Pager{padding:4px 0}
+div.Pager .CurrentPage{background: url(main_menu_button.png) no-repeat left center; padding:5px 0 5px 3px; font-weight:bold;}
+div.Pager .CurrentPage span{color:#000 !important;}
+div.Pager span.Pager{margin-left:2px; background:#fff; background: url(main_menu_button.png) no-repeat right center; padding:15px 10px 15px 5px; color:#999}
+div.Pager .Pager a{text-decoration:none; background: url(main_menu_button.png) no-repeat left center; padding:5px 0 5px 3px}
+div.Pager .Pager a:hover{ color:#fff}
+div.Pager input{ display:none}
+div.Pager span.btnLink{margin-left:2px; background:#fff; background: url(main_menu_button.png) no-repeat right center; padding:15px 10px 15px 5px;}
+div.Pager span.btnLink img{margin-bottom:3px}
+div.Pager a.Pager{text-decoration:none;}
+div.Pager .CustomInfo{padding:4px 0; text-align:left}
+div.Pager .CustomInfo span{color:#000; font-weight:bold; padding:5px}
+div.Pager .cleft{ margin-left:5px}
+/*Pager End ----- */
+
+/*Calendar*/
+.calendar{ width:100%; font-family:Arial;}
+.calendar_title { color:#333; background:#F4F4F4; font-size:13pt; font-family:Microsoft YaHei;}
+.calendar_title a{ color:#333; padding:0 10px;}
+.calendar_header{ text-align:center; height:30px; font-size:12pt; background:#FAFAFA; font-family:Microsoft YaHei; font-weight:normal;}
+.calendar_day{ font-size:15pt; text-align:right; background:#fff; color:#333; padding-right:5px; height:110px;}
+.calendar_selected{ font-size:15pt; text-align:right; background:#eee; color:#333; padding-right:5px;}
+.calendar_today{ font-size:15pt; text-align:right; background:#FCF8E3; color:#333; padding-right:5px;}
+.calendar_weekend{ font-size:15pt; text-align:right; background:#FAFAFA; color:#333; padding-right:5px;}
+.calendar_other{ font-size:15pt; text-align:right; background:#fff; padding-right:5px; height:110px;}
+.calendar_other a{ color:#ccc !important;}
+.calendar_next{ font-size:20pt;}
+.fc_content{ background:#25A8DF; border-radius:5px; line-height:15px; text-align:left; padding:0 5px; margin-left:5px; padding-bottom:3px; margin-bottom:2px;}
+.fc_title{ color:#fff; font-size:9pt;}
+/*Calendar End -----*/
+
+.user-edit-image{ clear:both; padding:10px;}
+.user-edit-image img{ width:100px; height:100px; border-radius:100px;}
+
+.tab-date{position:absolute; right:170px; top:9px;}
+.tab-date span{background:#E7E7E7; color:#333; padding:5px 10px; border-radius:5px; font-size:10pt;}
+
+#ctl00_cphSimple_ImageDiv{ padding-left:5px;}
+.image-item{ float:left; padding:5px; border:solid 1px #eee; margin:5px; width:113px;}
+.image-item-img{ text-align:center; height:90px; overflow:hidden;}
+.image-item-title{ text-align:center;}
+.image-item-btn{ text-align:center; padding:2px 0;}
+.image-item-btn a{ margin:0 3px;}
+.image-item-btn .del{ color:Red;}
+
+.showimg{ float:right;}
+.showimg-del{ position:absolute; top:5px; right:20px;}
+
+

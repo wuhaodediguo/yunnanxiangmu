@@ -1,0 +1,379 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="CopyMFRubikCubePowerContent.Admin.Commons.Main" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>项目管理系统</title>
+    <meta name="keywords" content="项目管理系统" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=10"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <link rel="stylesheet" href="../Css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../Css/publice.css" type="text/css" />
+    <link rel="shortcut icon" href="../Images/favicon.ico" type="image/x-icon" />
+
+    <script type="text/javascript" src="../JS/jquery-3.3.1.min.js"></script>
+
+    <link rel="stylesheet" href="../Skins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../Css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../Css/ionicons.min.css" />
+    <link rel="stylesheet" href="../Skins/dist/css/AdminLTE.min.css" />
+   
+    <link rel="stylesheet" href="../Css/main.css" />
+    <script type="text/javascript" src="../JS/html5shiv.min.js"></script>
+    <script type="text/javascript" src="../JS/respond.min.js"></script>
+    <script type="text/javascript" src="../JS/My97DatePicker/WdatePicker.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $(".mainmenu dl").hide();
+            $("li.mainmenu").hover(function () {
+                $(this).find("dl").stop(true, true);
+                $(this).find("dl").slideDown();
+            }, function () {
+                $(this).find("dl").stop(true, true);
+                $(this).find("dl").slideUp();
+            });
+        })
+    </script>
+    <script type="text/javascript">
+        // Loading Mask function
+        function RotateAnimation(obj) {
+            var $this = $(obj);
+            $this.button('loading');
+            setTimeout(function () {
+                $this.button('reset');
+            }, 2500);
+        }
+
+        // 顯示讀取遮罩
+        function ShowProgressBar() {
+            // Need to setTimeout to delay for IE Browser
+            setTimeout(function () {
+                displayProgress();
+                displayMaskFrame();
+            }, 300);
+        }
+        // 隱藏讀取遮罩
+        function HideProgressBar() {
+            var progress = $('#divProgress');
+            var maskFrame = $("#divMaskFrame");
+            progress.hide();
+            maskFrame.hide();
+        }
+        // 顯示讀取畫面
+        function displayProgress() {
+            var w = $(document).width();
+            var h = $(window).height(); // 若取 document 的位置會跑掉
+            var progress = $('#divProgress');
+            progress.css({ "z-index": 999, "top": (h / 2) - (progress.height() / 2), "left": (w / 2) - (progress.width() / 2) });
+            progress.show();
+        }
+        // 顯示遮罩畫面
+        function displayMaskFrame() {
+            var w = $(window).width();
+            var h = $(document).height();
+            var maskFrame = $("#divMaskFrame");
+            maskFrame.css({ "z-index": 998, "opacity": 0.8, "width": w, "height": h });
+            maskFrame.show();
+        }
+    </script>
+    <script type="text/javascript">
+
+        $(".mainmenu dl").hide();
+
+    </script>
+    <script type="text/javascript">
+        $(function () {
+
+            //切换对象为其他，这里为包含图片和标题的层
+            $('#change_32 div.changeDiv').soChange({//对象指向层，层内包含图片及标题
+                thumbObj: '#change_32 .ul_change_a2 span',
+                thumbNowClass: 'on'//自定义导航对象当前class为on
+            });
+
+        });
+    </script>
+
+    <style type="text/css">.backpack.dropzone {
+  font-family: 'SF UI Display', 'Segoe UI';
+  font-size: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 150px;
+  font-weight: lighter;
+  color: white;
+  will-change: right;
+  z-index: 2147483647;
+  bottom: 20%;
+  background: #333;
+  position: fixed;
+  user-select: none;
+  transition: left .5s, right .5s;
+  right: 0px; }
+  .backpack.dropzone .animation {
+    height: 80px;
+    width: 250px;
+    background: left center; }
+  .backpack.dropzone .title::before {
+    content: 'Save to'; }
+  .backpack.dropzone.closed {
+    right: -250px; }
+  .backpack.dropzone.hover .animation {
+    animation: sxt-play-anim-hover 0.91s steps(21);
+    animation-fill-mode: forwards;
+    background:  left center; }
+
+@keyframes sxt-play-anim-hover {
+  from {
+    background-position: 0px; }
+  to {
+    background-position: -5250px; } }
+  .backpack.dropzone.saving .title::before {
+    content: 'Saving to'; }
+  .backpack.dropzone.saving .animation {
+    background:left center;
+    animation: sxt-play-anim-saving steps(59) 2.46s infinite; }
+
+@keyframes sxt-play-anim-saving {
+  100% {
+    background-position: -14750px; } }
+  .backpack.dropzone.saved .title::before {
+    content: 'Saved to'; }
+  .backpack.dropzone.saved .animation {
+    background: left center;
+    animation: sxt-play-anim-saved steps(20) 0.83s forwards; }
+
+@keyframes sxt-play-anim-saved {
+  100% {
+    background-position: -5000px; } }
+</style>
+
+</head>
+<body class="hold-transition skin-<%=skin%> sidebar-mini">
+    <header>
+        <div class="wrapper" >
+    <%--<div class="wrapper" >--%>
+        <div class="navWrap  clearfix" style="height: inherit">
+        <div style="height: auto">
+            <span>
+                <img src="../Images/title.jpg"  width="100%" height="100px" /></span>
+        </div>
+    </div>
+    
+    
+    <!--nav 导航栏-->
+    <div class="navWrap  clearfix " style="background: RGB(9,142,245)">
+        <div class="nav" >
+            <ul >
+                <li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <li class="mainmenu" runat="server" id="div0001" style=" width:100px;"><a class="link" runat="server" id="div001" href="../xiangmu/shouye.aspx" style="font-size:14px;" >&nbsp;&nbsp;首页&nbsp;</a> </li>
+                <li class="mainmenu" runat="server" id="div0002" style=" width:120px;"><a class="link" runat="server" id="div002" >市场管理</a>
+                    <dl style="display: none;">
+                        <dd>
+                            <a runat="server" id="div0021" href="../xiangmu/shichang1.aspx">投标管理</a></dd>
+                        <dd>
+                            <a runat="server" id="div0022" href="../xiangmu/shichang2.aspx">中标管理</a></dd>
+                            <dd>
+                            <a runat="server" id="div0023" href="../xiangmu/shichang3.aspx">客商管理</a></dd>
+                    </dl>
+                </li>
+                <li class="mainmenu" runat="server" id="div0003" style=" width:120px;"><a class="link" runat="server" id="div003"  >合同管理</a>
+                    <dl style="display: none;">
+                        <dd>
+                            <a runat="server" id="div0031" href="../xiangmu/hetong1.aspx">施工合同管理</a></dd>
+                        <dd>
+                            <a runat="server" id="div0032" href="../xiangmu/hetong2.aspx">合作合同管理</a></dd>
+                        <dd>
+                            <a runat="server" id="div0033" href="../xiangmu/hetong3.aspx">采购合同管理</a></dd>
+                        <dd>
+                            <a runat="server" id="div0034" href="../xiangmu/hetong4.aspx">合同综合信息</a></dd>
+                    </dl>
+                </li>
+                <li class="mainmenu" runat="server" id="div0004" style=" width:120px;"><a class="link" runat="server" id="div004" >项目管理</a>
+                    <dl style="display: none;">
+                        <dd>
+                            <a runat="server" id="div0041" href="../xiangmu/xiangmu1.aspx">项目立项管理</a></dd>
+                        <dd>
+                            <a runat="server" id="div0045" href="../xiangmu/xiangmu11.aspx">项目审计管理</a></dd>
+                        <dd>
+                            <a runat="server" id="div0042" href="../xiangmu/xiangmu2.aspx">项目资料管理</a></dd>
+                            <dd>
+                            <a runat="server" id="div0043" href="../xiangmu/xiangmu3.aspx">项目综合管理</a></dd>
+                            <dd>
+                            <a runat="server" id="div0044" href="../xiangmu/xiangmu4.aspx">项目关闭管理</a></dd>
+                            <dd>
+                            <a runat="server" id="div0046" href="../xiangmu/xiangmu8_1.aspx">项目月报管理</a></dd>
+                    </dl>
+                </li>
+                <li class="mainmenu" runat="server" id="div0005" style=" width:120px;"><a class="link" runat="server" id="div005" >合作管理</a>
+                    <dl style="display: none;">
+                        <dd>
+                            <a runat="server" id="div0051" href="../xiangmu/hezuo1.aspx">合作单位管理</a></dd>
+                        <dd>
+                            <a runat="server" id="div0052" href="../xiangmu/hezuo2.aspx">施工队伍管理</a></dd>
+                        <dd>
+                            <a runat="server" id="div0053" href="../xiangmu/hezuo3.aspx">施工队结算管理</a></dd>
+                        <dd>
+                            <a runat="server" id="div0054" href="../xiangmu/hezuo4.aspx">施工队结算明细</a></dd> 
+                        <dd>
+                            <a runat="server" id="div0055" href="../xiangmu/hezuo5.aspx">施工队项目明细</a></dd>  
+                    </dl>
+                </li>
+                <li class="mainmenu" runat="server" id="div0006" style=" width:120px;"><a class="link" runat="server" id="div006" >财务管理</a>
+                    <dl style="display: none;">
+                       <dd>
+                            <a runat="server" id="div0061" href="../xiangmu/caiwu1.aspx">外经证管理</a></dd>
+                        <dd>
+                            <a runat="server" id="div0062" href="../xiangmu/caiwu2.aspx">开票申请</a></dd>
+                        <dd>
+                            <a runat="server" id="div0063" href="../xiangmu/caiwu3.aspx">开票管理</a></dd>
+                        <dd>
+                            <a runat="server" id="div0067" href="../xiangmu/caiwu31.aspx">税款管理</a></dd>
+                        <dd>
+                            <a runat="server" id="div0064" href="../xiangmu/caiwu4.aspx">发票管理</a></dd>
+                        <dd>
+                            <a runat="server" id="div0065" href="../xiangmu/caiwu5.aspx">收款管理</a></dd>
+                       <dd>
+                            <a runat="server" id="div0091" href="../xiangmu/caiwu6.aspx?models=1">结算申请</a></dd>
+                        <dd>
+                            <a runat="server" id="div0092" href="../xiangmu/caiwu6.aspx?models=2">结算审核</a></dd>
+                        <dd>
+                            <a runat="server" id="div0093" href="../xiangmu/caiwu7.aspx">结算管理</a></dd>
+                         <dd>
+                            <a runat="server" id="div0094" href="../xiangmu/caiwu8.aspx?models=1">付款申请</a></dd>
+                        <dd>
+                            <a runat="server" id="div0095" href="../xiangmu/caiwu8.aspx?models=2">付款审核</a></dd>
+                        <dd>
+                            <a runat="server" id="div0096" href="../xiangmu/caiwu8.aspx?models=3">付款管理</a></dd>
+                    </dl>
+                </li>        
+   
+                <li class="mainmenu" runat="server" id="div0007" style=" width:120px;"><a class="link" runat="server" id="div007" >系统管理</a>
+                    <dl style="display: none;">
+                        <dd>
+                            <a runat="server" id="div0071" href="../Role/Name.aspx?active=11,12">系统管理</a></dd>
+                        <dd>
+                            <a runat="server" id="div0072" href="../User/List.aspx?active=11,82">用户管理</a></dd>
+                        <dd>
+                            <a runat="server" id="div0073" href="../User/Profile.aspx">用户面板</a></dd>
+                        <dd>
+                            <a runat="server" id="div0074" href="../BaseData/guige.aspx">项目部管理</a></dd>
+                        <dd>
+                            <a runat="server" id="div0075" href="../BaseData/xiangmujingli.aspx">项目经理管理</a></dd>
+                        <dd>
+                            <a runat="server" id="div0076" href="../BaseData/pinzhong.aspx">州市管理</a></dd>
+                        <dd>
+                            <a runat="server" id="div0077" href="../BaseData/shenhe.aspx">审核管理</a></dd>
+                    </dl>
+                </li>
+                <li class="mainmenu" runat="server" id="div替换1" visible="false" style=" width:120px;">
+                     &nbsp;
+                </li>
+                <li class="mainmenu" runat="server" id="div替换2" visible="false" style=" width:120px;">
+                    &nbsp;
+                </li>
+                <li class="mainmenu" runat="server" id="div替换3" visible="false" style=" width:120px;">
+                    &nbsp;
+                </li>
+                <li class="mainmenu" runat="server" id="div替换4" visible="false" style=" width:120px;">
+                     &nbsp;
+                </li>
+                <li class="mainmenu" runat="server" id="div替换5" visible="false" style=" width:120px;">
+                     &nbsp;
+                </li>
+                <li class="mainmenu" runat="server" id="div替换6" visible="false" style=" width:120px;">
+                    
+                </li>
+                <li class="mainmenu" runat="server" id="div替换7" visible="false" style=" width:120px;">
+                    
+                </li>
+                <li style=" width:220px;">
+                </li>
+                <!-- 用户面板 -->
+                <li class="mainmenu">
+                
+                <a>
+                  <span class="hidden-xs"><asp:Label ID="lblFullName1" runat="server" Font-Size="12px"></asp:Label><asp:Label ID="Label1" runat="server" Text="欢迎您！" Font-Size="12px"></asp:Label></span>
+                </a>
+                
+              </li>
+               <li style="width:50px:"><a class="link" href="../Logout.aspx" ><asp:Label ID="Label2" runat="server" Text="【退出】" Font-Size="12px"></asp:Label></a>
+                    
+                </li>
+                 
+                 
+            </ul>
+        </div>
+    </div>
+    
+        <form id="form1" runat="server">
+        
+        <!-- 内容 -->
+        <div>
+            <asp:ContentPlaceHolder ID="cphMain" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        </form>
+        <footer class="main-footer" style="text-align:center; margin-top:0px; margin-left:0px; margin-bottom:-5px;">
+        <div id="Welcome" runat="server" style="text-align:center">
+            <strong style="text-align:center">Copyright &copy; <asp:Label ID="lblYear" runat="server"></asp:Label> 
+                <asp:HyperLink ID="hlCopyright" runat="server"></asp:HyperLink>
+            </strong>
+        
+        </div>
+        
+        <div id="MustDiv" runat="server" style="float:right; margin-right:20px; margin-top:-15px;">
+            
+        </div>
+      </footer>
+       
+        <div class="control-sidebar-bg">
+        </div>
+    </div>
+    </header>
+    
+    <script src="../Skins/plugins/jQueryUI/jquery-ui.min.js"></script>
+    <script src="../Skins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../Skins/dist/js/app.min.js"></script>
+    <script src="../Skins/plugins/iCheck/icheck.min.js"></script>
+    
+    <script type="text/javascript" src="../JS/Fancybox/jquery.fancybox.js?v=2.1.5"></script>
+    <link rel="stylesheet" type="text/css" href="../JS/Fancybox/jquery.fancybox.css?v=2.1.5"
+        media="screen" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".fancybox").fancybox({
+                parent: "form:first"
+            });
+
+        });
+    </script>
+    <script src="../Skins/dist/js/pages/dashboard.js"></script>
+    <%--<script type="text/javascript">
+
+        $(".mainmenu dl").hide();
+
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $(".mainmenu dl").hide();
+            $("li.mainmenu").hover(function () {
+                $(this).find("dl").stop(true, true);
+                $(this).find("dl").slideDown();
+            }, function () {
+                $(this).find("dl").stop(true, true);
+                $(this).find("dl").slideUp();
+            });
+        })
+    </script>--%>
+</body>
+</html>

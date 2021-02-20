@@ -1,0 +1,349 @@
+/* Formatted on 2018/10/09 17:35 (Formatter Plus v4.8.8) */
+CREATE OR REPLACE PROCEDURE pmcs.proc_notice_pmamail_approved (
+   in_formno   IN   VARCHAR2,
+   in_resend   IN   VARCHAR2
+)
+/******************************************************************************
+     NAME:       PROC_Notice_PMAmail_Approved
+     AUTHOR:     River Chien
+     PURPOSE:    Send Notice Mail when PMA Form status is approved
+                 - could be called by Program and updateFormStatus proc.
+
+     CREATE:     2018/01/27
+
+     MODIFY:
+
+     NOTICE:   1. Reference: Delphi, PCommon, MA_U.pas
+                   function TMA_Server.MA_Mail_Resend(iMNo: OleVariant): OleVariant; (1800 line)
+
+               2. 002,004 hard code info 仍要保留，但移除 稅編 &開戶銀行 (Confirmed with Jenny in 2018/02/07)
+
+    ---------------------------------------------------------
+    ---------------------------------------------------------
+
+  ******************************************************************************/
+AS
+   v_errmsg           VARCHAR2 (500);
+   -----
+   v_starttime        VARCHAR2 (50);
+   v_endtime          VARCHAR2 (50);
+   -----
+   v_subject          VARCHAR2 (1000);
+   v_mailbody         VARCHAR2 (5000);
+   v_content          VARCHAR2 (20000);
+   v_mailto           VARCHAR2 (1000);
+   v_mailcc           VARCHAR2 (1000);
+   -----
+   --V_ApplicantID     VARCHAR2(100);
+   v_applicantname    VARCHAR2 (1000);
+   v_applicantemail   VARCHAR2 (1000);
+   v_appdept          VARCHAR2 (1000);
+   v_phone            VARCHAR2 (1000);
+   v_approvername     VARCHAR2 (1000);
+   v_requestdate      VARCHAR2 (50);
+   v_projno           VARCHAR2 (500);
+   v_projname         VARCHAR2 (1000);
+   v_planner_ename    VARCHAR2 (1000);
+   v_planner_emal     VARCHAR2 (1000);
+   v_warehouse        VARCHAR2 (50);
+   v_shipcaddr        VARCHAR2 (1000);
+   v_shipeaddr        VARCHAR2 (1000);
+   v_chargedept       VARCHAR2 (10);
+   v_plantno          VARCHAR2 (10);
+   v_remark           VARCHAR2 (600);
+   v_partlist         VARCHAR2 (30000);
+
+   -- 抓取 PMA 相關寄信資料
+   CURSOR c_partlist
+   IS
+      SELECT   d.partno, i.partname, d.requestqty, d.adjustqty, d.receiveqty,
+               m.currency currency, d.estimateprice, d.remark
+          FROM rdwp_pmamaster m, rdwp_pmadetail d, rdwp_itemmaster i
+         WHERE d.partno = i.partno(+)
+           AND m.formno = d.formno
+           AND d.formno IN (in_formno)
+           AND m.currency IS NOT NULL
+      ORDER BY d.partno;
+
+   -- 抓取 Receiver 相關資料
+   CURSOR c_receiver
+   IS
+      SELECT c.formno, c.userid, u.email
+        FROM rdwp_pmareceiver c, fnda_user u
+       WHERE c.userid = u.userid(+) AND c.formno IN (in_formno);
+
+   -- 抓取 Project PCC e-mail
+   CURSOR c_pccmail
+   IS
+      SELECT bb.email, bb.englishname
+        FROM rdwp_pmamaster aa, rdwp_projectpcc pj, fnda_user bb
+       WHERE aa.formno = in_formno
+         AND aa.projectcode = pj.projectcode
+         AND pj.useful = 1
+         AND pj.pccid = bb.userid;
+--
+BEGIN
+   v_starttime := TO_CHAR (SYSDATE, 'yyyy/mm/dd hh24:mi:ss');
+
+   SELECT applicant.englishname, applicant.email, applicant.phone,
+          applicant.deptid, approver.englishname, p.projectcode,
+          pp.projectname, p.chargedept,
+          TO_CHAR (p.requestdate, 'yyyy/mm/dd'), p.plantno,
+          planner.englishname, planner.email, p.plantwarehouseid,
+          w.addresszh, w.addressen, p.requestreason
+     INTO v_applicantname, v_applicantemail, v_phone,
+          v_appdept, v_approvername, v_projno,
+          v_projname, v_chargedept,
+          v_requestdate, v_plantno,
+          v_planner_ename, v_planner_emal, v_warehouse,
+          v_shipcaddr, v_shipeaddr, v_remark
+     FROM fnda_form m,
+          rdwp_pmamaster p,
+          rdwp_project pp,
+          rdwm_warehouse w,                                     --> Ship. info
+          fnda_user applicant,                             --> Applicant Info.
+          fnda_user planner,                          --> Planner English Name
+          fnda_user approver                                  -->Approver name
+    WHERE m.applicantid = applicant.userid(+)
+      AND p.planner = planner.userid(+)
+      AND m.approverid = approver.userid(+)
+      AND (pp.bcid = w.bcid AND p.receivewh = w.warehouseid)
+      AND p.projectcode = pp.projectcode(+)
+      AND m.formno = p.formno(+)
+      AND m.formno IN (in_formno);
+
+   -- 主旨
+   v_subject :=
+         'PMCS Message (Project Material Application Form -- Sign-Off Complete)'
+      || ' '
+      || v_projname
+      || '--'
+      || in_formno;
+   -- ** Start ** --
+
+   -- 內容
+   v_content := '<p style="font-family:Calibri">';
+   v_content :=
+         v_content
+      || 'Dear '
+      || v_planner_ename
+      || ', '
+      || '<BR><BR>'
+      || '   Project Material Application (PMA) Form (No: '
+      || in_formno
+      || ')'
+      || ' is approved by '
+      || v_approvername
+      || '. <BR>'
+      || '   Please continue to process this PMA Form. <BR><BR>';
+
+   IF (in_resend = 'true')
+   THEN
+      v_subject := v_subject || ' ' || '(re-send)';
+      v_content :=
+            v_content
+         || '《Warning》: <BR>
+                     PMCS re-send this mail. <BR>
+                     Please check PMA_No and Ensure shipment is not duplicate.<BR><BR>';
+   ELSIF (in_resend = 'false')
+   THEN
+      v_subject :=
+            'PMCS Message (Project Material Application Form -- Adjusted Qty)'
+         || ' '
+         || v_projname
+         || '--'
+         || in_formno;
+      v_content :=
+            v_content
+         || '《Warning》: <BR>
+                     The content of this PMA had changed the Qty as following table.<BR>
+                     Please check the [Adjusted Qty] and Ensure shipment is fulfilled the change. .<BR><BR>';
+   END IF;
+
+   v_content := v_content || '   Ship To Addr. : <BR>';
+
+   IF (v_plantno = '004')
+   THEN
+      --WKS
+      v_content := v_content || '   緯創資通股份有限公司' || '<BR>';
+      v_content := v_content || '   Company Code : 960286' || '<BR>';
+      v_content := v_content || '   ADDR : ' || v_shipcaddr || '<BR>';
+      v_content := v_content || '   TEL : 886-2-6616-9999' || '<BR>';
+      v_content := v_content || '   統一編號 : 12868358' || '<BR><BR>';
+      v_content := v_content || '   Supplier : ' || '<BR>';
+      v_content := v_content || '   緯創資通(昆山)股份有限公司' || '<BR>';
+      v_content :=
+            v_content
+         || ';;;ADDR : 中國江蘇省昆山市加工出口區第一大道25棟'
+         || '<BR>';
+      v_content := v_content || '   TEL : 86-512-57367888' || '<BR>';
+      v_content := v_content || '   FAX : 86-512-57367999' || '<BR>';
+      v_content := v_content || '   Payment Term : OA 60' || '<BR>';
+      v_content := v_content || '   Delivery Term : CIF' || '<BR><BR>';
+   ELSIF (v_plantno = '002')
+   THEN
+      --WZS
+      v_content := v_content || '   緯創資通股份有限公司' || '<BR>';
+      v_content := v_content || '   Company Code : 966290' || '<BR>';
+      v_content := v_content || '   ADDR : ' || v_shipcaddr || '<BR>';
+      v_content := v_content || '   TEL : 886-2-6616-9999' || '<BR>';
+      v_content := v_content || '   統一編號 : 12868358' || '<BR><BR>';
+      v_content := v_content || '   Supplier :' || '<BR>';
+      v_content := v_content || '   緯創資通(中山)有限公司' || '<BR>';
+      v_content :=
+            v_content
+         || '   ADDR : 中國廣東省中山市中山港中山火炬開發區科技東路38號'
+         || '<BR>';
+      v_content := v_content || '   TEL : 86-760-3382-382' || '<BR>';
+      v_content := v_content || '   FAX : 86-760-3382-380' || '<BR>';
+      v_content := v_content || '   Payment Term : OA 45' || '<BR>';
+      v_content := v_content || '   Delivery Term : CIF' || '<BR><BR>';
+   ELSE
+      v_content :=
+            v_content
+         || '     '
+         || v_shipcaddr
+         || '<BR>'
+         || '     '
+         || v_shipeaddr
+         || '<BR><BR>';
+   END IF;
+
+   v_content :=
+         v_content
+      || '============================================================================================'
+      || '<BR><BR>';
+   v_content :=
+         v_content
+      || 'Form Number          :'
+      || in_formno
+      || '<BR>'
+      || 'Charge Department    :'
+      || v_chargedept
+      || '<BR>'
+      || 'Applicant            :'
+      || v_applicantname
+      || '<BR>'
+      || 'Department/Extension :'
+      || v_appdept
+      || '/'
+      || v_phone
+      || ''
+      || '<BR>'
+      || 'Demand Date          :'
+      || v_requestdate
+      || '<BR>'
+      || 'Warehouse            :'
+      || v_warehouse
+      || '<BR>'
+      || 'Planner              :'
+      || v_planner_ename
+      || '<BR>'
+      || 'Project Code         :'
+      || v_projno
+      || '<BR>'
+      || 'Project Name         :'
+      || v_projname
+      || '<BR>'
+      || 'Remark               :'
+      || v_remark
+      || '<BR>';
+
+   --Part info.
+   FOR i IN c_partlist
+   LOOP
+      v_partlist :=
+            v_partlist
+         || '<TR>'
+         || '<TD>'
+         || i.partno
+         || '</TD>'
+         || '<TD>'
+         || i.partname
+         || '</TD>'
+         || '<TD align = "right">'
+         || i.requestqty
+         || '</TD>'
+         || '<TD align = "right">'
+         || i.adjustqty
+         || '</TD>'
+         || '<TD>'
+         || i.currency
+         || '</TD>'
+         || '<TD align = "right">'
+         || i.estimateprice
+         || '</TD>'
+         || '<TD>'
+         || i.remark
+         || '</TD>'
+         || '</TR>';
+   END LOOP;
+
+   v_content :=
+         v_content
+      || '<TABLE BORDER = "1" cellspacing = "2" cellpadding = "2"
+                 style = "FONT-FAMILY: Calibri; FONT-SIZE: 11pt">'
+      || '<TR> <TH> Part Number </TH>'
+      || '<TH> Description </TH>'
+      || '<TH> Request Qty </TH>'
+      || '<TH> Adjusted Qty </TH>'
+      || '<TH> Currency </TH>'
+      || '<TH> Unit Price </TH>'
+      || '<TH> Remark </TH> <TR>'
+      || v_partlist
+      || '</TABLE>';
+   v_content :=
+         v_content
+      || '============================================================================================'
+      || '<BR><BR>';
+   v_content :=
+      v_content || 'PMCS (Project Material/Management Control System)'
+      || '<BR>';
+   v_content := v_content || 'HelpDesk: 8501-1119' || '<BR>';
+   v_content := v_content || 'E-Mail: PMCS@Wistron.com' || '<BR>';
+   -- ** End ** --
+   v_endtime := 'End: ' || TO_CHAR (SYSDATE, 'yyyy/mm/dd hh24:mi:ss');
+   v_mailbody := v_content;
+   --寄件人
+   v_mailto := v_planner_emal;
+   v_mailcc := v_applicantemail;
+
+   -- Receiver info.
+   FOR i IN c_receiver
+   LOOP
+      IF (i.email IS NOT NULL)
+      THEN
+         v_mailto := v_mailto || ',' || i.email;
+      END IF;
+   END LOOP;
+
+   FOR j IN c_pccmail
+   LOOP
+      IF (j.email IS NOT NULL)
+      THEN
+         v_mailcc := v_mailcc || ',' || j.email;
+      END IF;
+   END LOOP;
+
+   --Send Notice
+   sendmail ('', v_mailto, v_mailcc, '', v_subject, v_mailbody);
+EXCEPTION
+   WHEN OTHERS
+   THEN
+      v_errmsg := SQLERRM;
+      sendmail ('',
+                'Manais_Wu@WistronITS.com',                     --> Debug 的人
+                'Mika_Jou@wistron.com',                          --> PMCS 信箱
+                '',
+                v_subject,
+                   v_mailbody
+                || '<BR>'
+                || v_errmsg
+                || '<BR>'
+                || 'Start: <BR>'
+                || v_starttime
+                || 'End: <BR>'
+                || v_endtime
+               );
+END proc_notice_pmamail_approved;
+/

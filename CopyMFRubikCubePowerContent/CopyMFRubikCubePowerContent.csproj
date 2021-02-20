@@ -1,0 +1,2789 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E790FB5D-57A5-433A-890D-05C225E36CA7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CopyMFRubikCubePowerContent</RootNamespace>
+    <AssemblyName>CopyMFRubikCubePowerContent</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode>true</IISExpressUseClassicPipelineMode>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspNetPager, Version=7.3.2.0, Culture=neutral, PublicKeyToken=fb0a0fe055d40fd4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AspNetPager.dll</HintPath>
+    </Reference>
+    <Reference Include="BarCode, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\BarCode.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\车险管理\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.1.3.1, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MojoCube.Api.Data\bin\Debug\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.1.3.1, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MojoCube.Api.Data\bin\Debug\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.1.3.1, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MojoCube.Api.Data\bin\Debug\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.1.3.1, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MojoCube.Api.Data\bin\Debug\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="UrlRewritingNet.UrlRewriter">
+      <HintPath>F:\mystudy\源代码\MFRubikCubePowerContent\bin\UrlRewritingNet.UrlRewriter.dll</HintPath>
+    </Reference>
+    <Reference Include="ZedGraph">
+      <HintPath>F:\mystudy\源代码\MFRubikCubePowerContent\bin\ZedGraph.dll</HintPath>
+    </Reference>
+    <Reference Include="ZedGraph.Web">
+      <HintPath>F:\mystudy\源代码\MFRubikCubePowerContent\bin\ZedGraph.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\BaseData\company.aspx" />
+    <Content Include="Admin\BaseData\companyEdit.aspx" />
+    <Content Include="Admin\BaseData\guige.aspx" />
+    <Content Include="Admin\BaseData\guigeEdit.aspx" />
+    <Content Include="Admin\BaseData\pinzhong.aspx" />
+    <Content Include="Admin\BaseData\pinzhongEdit.aspx" />
+    <Content Include="Admin\BaseData\shenhe.aspx" />
+    <Content Include="Admin\BaseData\xiangmujingli.aspx" />
+    <Content Include="Admin\BaseData\yewustyle.aspx" />
+    <Content Include="Admin\Controls\CKEditor.ascx" />
+    <Content Include="Admin\Controls\ZedGraph\1.txt" />
+    <Content Include="Admin\Css\publice.css" />
+    <Content Include="Admin\Css\style.css" />
+    <Content Include="Admin\Default.aspx" />
+    <Content Include="Admin\Files.aspx" />
+    <Content Include="Admin\Images\log11.png" />
+    <Content Include="Admin\Images\Login.jpg" />
+    <Content Include="Admin\Images\title.jpg" />
+    <Content Include="Admin\Images\title2.png" />
+    <Content Include="Admin\Images\导航图片.jpg" />
+    <Content Include="Admin\Images\首页.jpg" />
+    <Content Include="Admin\JS\jquery-3.3.1.min.js" />
+    <Content Include="Admin\Logout.aspx" />
+    <Content Include="Admin\Commons\Album.aspx" />
+    <Content Include="Admin\Commons\Info.aspx" />
+    <Content Include="Admin\Controls\CKEditor\adapters\jquery.js" />
+    <Content Include="Admin\Controls\CKEditor\build-config.js" />
+    <Content Include="Admin\Controls\CKEditor\ckeditor.js" />
+    <Content Include="Admin\Controls\CKEditor\config.js" />
+    <Content Include="Admin\Controls\CKEditor\contents.css" />
+    <Content Include="Admin\Controls\CKEditor\lang\af.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\ar.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\bg.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\bn.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\bs.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\ca.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\cs.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\cy.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\da.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\de.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\el.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\en-au.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\en-ca.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\en-gb.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\en.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\eo.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\es.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\et.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\eu.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\fa.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\fi.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\fo.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\fr-ca.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\fr.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\gl.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\gu.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\he.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\hi.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\hr.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\hu.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\id.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\is.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\it.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\ja.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\ka.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\km.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\ko.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\ku.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\lt.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\lv.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\mk.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\mn.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\ms.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\nb.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\nl.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\no.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\pl.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\pt-br.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\pt.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\ro.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\ru.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\si.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\sk.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\sl.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\sq.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\sr-latn.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\sr.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\sv.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\th.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\tr.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\tt.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\ug.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\uk.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\vi.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\zh-cn.js" />
+    <Content Include="Admin\Controls\CKEditor\lang\zh.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\af.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\en-gb.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\id.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\ko.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\si.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\tt.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\zh.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Admin\Controls\CKEditor\plugins\about\dialogs\about.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\album\image_add.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\album\plugin.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\colordialog\dialogs\colordialog.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\div\dialogs\div.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\find\dialogs\find.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\flash\dialogs\flash.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\flash\images\placeholder.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\forms\dialogs\button.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\forms\dialogs\checkbox.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\forms\dialogs\form.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\forms\dialogs\hiddenfield.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\forms\dialogs\radio.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\forms\dialogs\select.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\forms\dialogs\textarea.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\forms\dialogs\textfield.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\forms\images\hiddenfield.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\icons.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\icons_hidpi.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\iframe\dialogs\iframe.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\iframe\images\placeholder.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\image\dialogs\image.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\image\images\noimage.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\link\dialogs\link.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\link\images\anchor.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\liststyle\dialogs\liststyle.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\magicline\images\hidpi\icon-rtl.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\magicline\images\icon-rtl.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\magicline\images\icon.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\pagebreak\images\pagebreak.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\preview\preview.html" />
+    <Content Include="Admin\Controls\CKEditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Admin\Controls\CKEditor\plugins\showblocks\images\block_address.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\showblocks\images\block_blockquote.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\showblocks\images\block_div.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\showblocks\images\block_h1.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\showblocks\images\block_h2.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\showblocks\images\block_h3.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\showblocks\images\block_h4.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\showblocks\images\block_h5.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\showblocks\images\block_h6.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\showblocks\images\block_p.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\showblocks\images\block_pre.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\dialogs\smiley.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\angel_smile.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\angel_smile.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\angry_smile.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\angry_smile.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\broken_heart.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\broken_heart.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\confused_smile.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\confused_smile.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\cry_smile.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\cry_smile.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\devil_smile.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\devil_smile.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\embaressed_smile.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\embarrassed_smile.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\embarrassed_smile.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\envelope.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\envelope.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\heart.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\heart.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\kiss.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\kiss.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\lightbulb.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\lightbulb.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\omg_smile.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\omg_smile.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\regular_smile.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\regular_smile.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\sad_smile.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\sad_smile.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\shades_smile.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\shades_smile.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\teeth_smile.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\teeth_smile.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\thumbs_down.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\thumbs_down.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\thumbs_up.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\thumbs_up.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\tongue_smile.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\tongue_smile.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\tounge_smile.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\whatchutalkingabout_smile.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\whatchutalkingabout_smile.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\wink_smile.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\smiley\images\wink_smile.png" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\af.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\ar.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\bg.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\da.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\en-gb.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\es.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\gl.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\hu.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\id.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\ja.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\km.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\lt.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\ru.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\si.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\sl.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\tt.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\uk.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\vi.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\zh.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Admin\Controls\CKEditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\table\dialogs\table.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\templates\dialogs\templates.css" />
+    <Content Include="Admin\Controls\CKEditor\plugins\templates\dialogs\templates.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\templates\templates\default.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\templates\templates\images\template1.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\templates\templates\images\template2.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\templates\templates\images\template3.gif" />
+    <Content Include="Admin\Controls\CKEditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Admin\Controls\CKEditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Admin\Controls\CKEditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Admin\Controls\CKEditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Admin\Controls\CKEditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\.temp\css\dialog.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\.temp\css\dialog_ie.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\.temp\css\dialog_ie7.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\.temp\css\dialog_ie8.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\.temp\css\dialog_iequirks.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\.temp\css\dialog_opera.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\.temp\css\editor.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\.temp\css\editor_gecko.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\.temp\css\editor_ie.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\.temp\css\editor_ie7.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\.temp\css\editor_ie8.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\.temp\css\editor_iequirks.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\dev\icons16.svg" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\dev\icons32.svg" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\dialog.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\dialog_ie.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\dialog_ie7.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\dialog_ie8.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\dialog_iequirks.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\dialog_opera.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\editor.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\editor_gecko.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\editor_ie.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\editor_ie7.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\editor_ie8.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\editor_iequirks.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\icons.png" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\icons_hidpi.png" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\images\arrow.png" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\images\close.png" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\images\hidpi\close.png" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\images\hidpi\lock-open.png" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\images\hidpi\lock.png" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\images\hidpi\refresh.png" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\images\lock-open.png" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\images\lock.png" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\images\refresh.png" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\sample\bootstrapck-sample.html" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\sample\css\bootstrapck-sample.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\sample\js\analytics.js" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\sample\js\jquery-1.11.0.min.js" />
+    <Content Include="Admin\Controls\CKEditor\skins\bootstrapck\skin.js" />
+    <Content Include="Admin\Controls\CKEditor\skins\moono\dialog.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\moono\dialog_ie.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\moono\dialog_ie7.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\moono\dialog_ie8.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\moono\editor.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\moono\editor_gecko.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\moono\editor_ie.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\moono\editor_ie7.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\moono\editor_ie8.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\moono\editor_iequirks.css" />
+    <Content Include="Admin\Controls\CKEditor\skins\moono\icons.png" />
+    <Content Include="Admin\Controls\CKEditor\skins\moono\icons_hidpi.png" />
+    <Content Include="Admin\Controls\CKEditor\skins\moono\images\arrow.png" />
+    <Content Include="Admin\Controls\CKEditor\skins\moono\images\close.png" />
+    <Content Include="Admin\Controls\CKEditor\skins\moono\images\hidpi\close.png" />
+    <Content Include="Admin\Controls\CKEditor\skins\moono\images\hidpi\lock-open.png" />
+    <Content Include="Admin\Controls\CKEditor\skins\moono\images\hidpi\lock.png" />
+    <Content Include="Admin\Controls\CKEditor\skins\moono\images\hidpi\refresh.png" />
+    <Content Include="Admin\Controls\CKEditor\skins\moono\images\lock-open.png" />
+    <Content Include="Admin\Controls\CKEditor\skins\moono\images\lock.png" />
+    <Content Include="Admin\Controls\CKEditor\skins\moono\images\refresh.png" />
+    <Content Include="Admin\Controls\CKEditor\styles.js" />
+    <Content Include="Admin\Controls\KindEditor.ascx" />
+    <Content Include="Admin\Controls\KindEditor\asp.net\bin\LitJSON.dll" />
+    <Content Include="Admin\Controls\KindEditor\asp.net\demo.aspx" />
+    <Content Include="Admin\Controls\KindEditor\asp.net\README.txt" />
+    <Content Include="Admin\Controls\KindEditor\kindeditor-all-min.js" />
+    <Content Include="Admin\Controls\KindEditor\kindeditor-all.js" />
+    <Content Include="Admin\Controls\KindEditor\kindeditor-min.js" />
+    <Content Include="Admin\Controls\KindEditor\kindeditor.js" />
+    <Content Include="Admin\Controls\KindEditor\lang\ar.js" />
+    <Content Include="Admin\Controls\KindEditor\lang\en.js" />
+    <Content Include="Admin\Controls\KindEditor\lang\ko.js" />
+    <Content Include="Admin\Controls\KindEditor\lang\zh_CN.js" />
+    <Content Include="Admin\Controls\KindEditor\lang\zh_TW.js" />
+    <Content Include="Admin\Controls\KindEditor\license.txt" />
+    <Content Include="Admin\Controls\KindEditor\plugins\anchor\anchor.js" />
+    <Content Include="Admin\Controls\KindEditor\plugins\autoheight\autoheight.js" />
+    <Content Include="Admin\Controls\KindEditor\plugins\baidumap\baidumap.js" />
+    <Content Include="Admin\Controls\KindEditor\plugins\baidumap\index.html" />
+    <Content Include="Admin\Controls\KindEditor\plugins\baidumap\map.html" />
+    <Content Include="Admin\Controls\KindEditor\plugins\clearhtml\clearhtml.js" />
+    <Content Include="Admin\Controls\KindEditor\plugins\code\code.js" />
+    <Content Include="Admin\Controls\KindEditor\plugins\code\prettify.css" />
+    <Content Include="Admin\Controls\KindEditor\plugins\code\prettify.js" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\emoticons.js" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\0.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\1.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\10.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\100.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\101.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\102.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\103.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\104.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\105.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\106.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\107.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\108.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\109.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\11.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\110.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\111.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\112.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\113.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\114.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\115.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\116.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\117.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\118.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\119.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\12.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\120.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\121.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\122.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\123.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\124.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\125.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\126.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\127.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\128.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\129.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\13.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\130.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\131.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\132.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\133.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\134.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\14.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\15.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\16.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\17.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\18.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\19.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\2.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\20.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\21.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\22.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\23.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\24.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\25.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\26.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\27.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\28.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\29.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\3.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\30.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\31.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\32.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\33.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\34.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\35.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\36.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\37.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\38.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\39.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\4.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\40.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\41.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\42.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\43.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\44.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\45.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\46.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\47.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\48.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\49.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\5.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\50.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\51.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\52.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\53.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\54.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\55.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\56.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\57.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\58.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\59.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\6.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\60.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\61.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\62.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\63.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\64.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\65.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\66.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\67.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\68.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\69.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\7.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\70.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\71.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\72.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\73.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\74.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\75.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\76.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\77.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\78.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\79.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\8.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\80.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\81.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\82.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\83.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\84.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\85.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\86.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\87.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\88.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\89.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\9.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\90.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\91.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\92.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\93.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\94.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\95.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\96.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\97.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\98.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\99.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\emoticons\images\static.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\filemanager\filemanager.js" />
+    <Content Include="Admin\Controls\KindEditor\plugins\filemanager\images\file-16.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\filemanager\images\file-64.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\filemanager\images\folder-16.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\filemanager\images\folder-64.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\filemanager\images\go-up.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\flash\flash.js" />
+    <Content Include="Admin\Controls\KindEditor\plugins\image\image.js" />
+    <Content Include="Admin\Controls\KindEditor\plugins\image\images\align_left.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\image\images\align_right.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\image\images\align_top.gif" />
+    <Content Include="Admin\Controls\KindEditor\plugins\image\images\refresh.png" />
+    <Content Include="Admin\Controls\KindEditor\plugins\insertfile\insertfile.js" />
+    <Content Include="Admin\Controls\KindEditor\plugins\lineheight\lineheight.js" />
+    <Content Include="Admin\Controls\KindEditor\plugins\link\link.js" />
+    <Content Include="Admin\Controls\KindEditor\plugins\map\map.html" />
+    <Content Include="Admin\Controls\KindEditor\plugins\map\map.js" />
+    <Content Include="Admin\Controls\KindEditor\plugins\media\media.js" />
+    <Content Include="Admin\Controls\KindEditor\plugins\multiimage\images\image.png" />
+    <Content Include="Admin\Controls\KindEditor\plugins\multiimage\images\select-files-en.png" />
+    <Content Include="Admin\Controls\KindEditor\plugins\multiimage\images\select-files-zh_CN.png" />
+    <Content Include="Admin\Controls\KindEditor\plugins\multiimage\images\swfupload.swf" />
+    <Content Include="Admin\Controls\KindEditor\plugins\multiimage\multiimage.js" />
+    <Content Include="Admin\Controls\KindEditor\plugins\pagebreak\pagebreak.js" />
+    <Content Include="Admin\Controls\KindEditor\plugins\plainpaste\plainpaste.js" />
+    <Content Include="Admin\Controls\KindEditor\plugins\preview\preview.js" />
+    <Content Include="Admin\Controls\KindEditor\plugins\quickformat\quickformat.js" />
+    <Content Include="Admin\Controls\KindEditor\plugins\table\table.js" />
+    <Content Include="Admin\Controls\KindEditor\plugins\template\html\1.html" />
+    <Content Include="Admin\Controls\KindEditor\plugins\template\html\2.html" />
+    <Content Include="Admin\Controls\KindEditor\plugins\template\html\3.html" />
+    <Content Include="Admin\Controls\KindEditor\plugins\template\template.js" />
+    <Content Include="Admin\Controls\KindEditor\plugins\wordpaste\wordpaste.js" />
+    <Content Include="Admin\Controls\KindEditor\themes\common\anchor.gif" />
+    <Content Include="Admin\Controls\KindEditor\themes\common\blank.gif" />
+    <Content Include="Admin\Controls\KindEditor\themes\common\flash.gif" />
+    <Content Include="Admin\Controls\KindEditor\themes\common\loading.gif" />
+    <Content Include="Admin\Controls\KindEditor\themes\common\media.gif" />
+    <Content Include="Admin\Controls\KindEditor\themes\common\rm.gif" />
+    <Content Include="Admin\Controls\KindEditor\themes\default\background.png" />
+    <Content Include="Admin\Controls\KindEditor\themes\default\default.css" />
+    <Content Include="Admin\Controls\KindEditor\themes\default\default.png" />
+    <Content Include="Admin\Controls\KindEditor\themes\qq\editor.gif" />
+    <Content Include="Admin\Controls\KindEditor\themes\qq\qq.css" />
+    <Content Include="Admin\Controls\KindEditor\themes\simple\simple.css" />
+    <Content Include="Admin\Controls\ZedGraph.ascx" />
+    <Content Include="Admin\Css\font-awesome.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Admin\Css\fontawesome-webfont.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Admin\Css\ionicons.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Admin\Css\ionicons.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Admin\Css\main.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Admin\Css\main_menu_button.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Admin\Dashboard\Default.aspx" />
+    <Content Include="Admin\Identify\CheckCode.aspx" />
+    <Content Include="Admin\Images\asc.gif" />
+    <Content Include="Admin\Images\desc.gif" />
+    <Content Include="Admin\Images\favicon.ico" />
+    <Content Include="Admin\Images\female.png" />
+    <Content Include="Admin\Images\FileType\ai.png" />
+    <Content Include="Admin\Images\FileType\apk.png" />
+    <Content Include="Admin\Images\FileType\doc.png" />
+    <Content Include="Admin\Images\FileType\eml.png" />
+    <Content Include="Admin\Images\FileType\folder.png" />
+    <Content Include="Admin\Images\FileType\html.png" />
+    <Content Include="Admin\Images\FileType\ics.png" />
+    <Content Include="Admin\Images\FileType\iso.png" />
+    <Content Include="Admin\Images\FileType\jpg.png" />
+    <Content Include="Admin\Images\FileType\mdb.png" />
+    <Content Include="Admin\Images\FileType\mp3.png" />
+    <Content Include="Admin\Images\FileType\other.png" />
+    <Content Include="Admin\Images\FileType\pdf.png" />
+    <Content Include="Admin\Images\FileType\ppt.png" />
+    <Content Include="Admin\Images\FileType\psd.png" />
+    <Content Include="Admin\Images\FileType\torrent.png" />
+    <Content Include="Admin\Images\FileType\txt.png" />
+    <Content Include="Admin\Images\FileType\wmv.png" />
+    <Content Include="Admin\Images\FileType\xls.png" />
+    <Content Include="Admin\Images\FileType\zip.png" />
+    <Content Include="Admin\Images\first.gif" />
+    <Content Include="Admin\Images\last.gif" />
+    <Content Include="Admin\Images\logo.png" />
+    <Content Include="Admin\Images\logo_1.png" />
+    <Content Include="Admin\Images\logo_200.png" />
+    <Content Include="Admin\Images\male.png" />
+    <Content Include="Admin\Images\next.gif" />
+    <Content Include="Admin\Images\prev.gif" />
+    <Content Include="Admin\Images\user.png" />
+    <Content Include="Admin\JS\Fancybox\blank.gif" />
+    <Content Include="Admin\JS\Fancybox\fancybox_loading%402x.gif" />
+    <Content Include="Admin\JS\Fancybox\fancybox_loading.gif" />
+    <Content Include="Admin\JS\Fancybox\fancybox_overlay.png" />
+    <Content Include="Admin\JS\Fancybox\fancybox_sprite%402x.png" />
+    <Content Include="Admin\JS\Fancybox\fancybox_sprite.png" />
+    <Content Include="Admin\JS\Fancybox\helpers\fancybox_buttons.png" />
+    <Content Include="Admin\JS\Fancybox\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="Admin\JS\Fancybox\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="Admin\JS\Fancybox\helpers\jquery.fancybox-media.js" />
+    <Content Include="Admin\JS\Fancybox\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="Admin\JS\Fancybox\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="Admin\JS\Fancybox\jquery.fancybox.css" />
+    <Content Include="Admin\JS\Fancybox\jquery.fancybox.js" />
+    <Content Include="Admin\JS\Fancybox\jquery.fancybox.pack.js" />
+    <Content Include="Admin\JS\html5shiv.min.js" />
+    <Content Include="Admin\JS\mojocube.js" />
+    <Content Include="Admin\JS\My97DatePicker\calendar.js" />
+    <Content Include="Admin\JS\My97DatePicker\CHS_WdatePicker.js" />
+    <Content Include="Admin\JS\My97DatePicker\config.js" />
+    <Content Include="Admin\JS\My97DatePicker\EN_WdatePicker.js" />
+    <Content Include="Admin\JS\My97DatePicker\lang\en.js" />
+    <Content Include="Admin\JS\My97DatePicker\lang\zh-cn.js" />
+    <Content Include="Admin\JS\My97DatePicker\lang\zh-tw.js" />
+    <Content Include="Admin\JS\My97DatePicker\My97DatePicker.htm" />
+    <Content Include="Admin\JS\My97DatePicker\skin\datePicker.gif" />
+    <Content Include="Admin\JS\My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="Admin\JS\My97DatePicker\skin\default\img.gif" />
+    <Content Include="Admin\JS\My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="Admin\JS\My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="Admin\JS\My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="Admin\JS\My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="Admin\JS\My97DatePicker\WdatePicker.js" />
+    <Content Include="Admin\JS\respond.min.js" />
+    <Content Include="Admin\Login.aspx" />
+    <Content Include="Admin\Role\List.aspx" />
+    <Content Include="Admin\Role\Name.aspx" />
+    <Content Include="Admin\Role\NameEdit.aspx" />
+    <Content Include="Admin\Skins\bootstrap\css\bootstrap.css" />
+    <Content Include="Admin\Skins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Admin\Skins\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Admin\Skins\bootstrap\js\bootstrap.js" />
+    <Content Include="Admin\Skins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Admin\Skins\bootstrap\js\npm.js" />
+    <Content Include="Admin\Skins\dist\css\AdminLTE.css" />
+    <Content Include="Admin\Skins\dist\css\AdminLTE.min.css" />
+    <Content Include="Admin\Skins\dist\css\skins\skin-black-light.css" />
+    <Content Include="Admin\Skins\dist\css\skins\skin-black-light.min.css" />
+    <Content Include="Admin\Skins\dist\css\skins\skin-black.css" />
+    <Content Include="Admin\Skins\dist\css\skins\skin-black.min.css" />
+    <Content Include="Admin\Skins\dist\css\skins\skin-blue-light.css" />
+    <Content Include="Admin\Skins\dist\css\skins\skin-blue-light.min.css" />
+    <Content Include="Admin\Skins\dist\css\skins\skin-blue.css" />
+    <Content Include="Admin\Skins\dist\css\skins\skin-blue.min.css" />
+    <Content Include="Admin\Skins\dist\css\skins\skin-green-light.css" />
+    <Content Include="Admin\Skins\dist\css\skins\skin-green-light.min.css" />
+    <Content Include="Admin\Skins\dist\css\skins\skin-green.css" />
+    <Content Include="Admin\Skins\dist\css\skins\skin-green.min.css" />
+    <Content Include="Admin\Skins\dist\css\skins\skin-purple-light.css" />
+    <Content Include="Admin\Skins\dist\css\skins\skin-purple-light.min.css" />
+    <Content Include="Admin\Skins\dist\css\skins\skin-purple.css" />
+    <Content Include="Admin\Skins\dist\css\skins\skin-purple.min.css" />
+    <Content Include="Admin\Skins\dist\css\skins\skin-red-light.css" />
+    <Content Include="Admin\Skins\dist\css\skins\skin-red-light.min.css" />
+    <Content Include="Admin\Skins\dist\css\skins\skin-red.css" />
+    <Content Include="Admin\Skins\dist\css\skins\skin-red.min.css" />
+    <Content Include="Admin\Skins\dist\css\skins\skin-yellow-light.css" />
+    <Content Include="Admin\Skins\dist\css\skins\skin-yellow-light.min.css" />
+    <Content Include="Admin\Skins\dist\css\skins\skin-yellow.css" />
+    <Content Include="Admin\Skins\dist\css\skins\skin-yellow.min.css" />
+    <Content Include="Admin\Skins\dist\css\skins\_all-skins.css" />
+    <Content Include="Admin\Skins\dist\css\skins\_all-skins.min.css" />
+    <Content Include="Admin\Skins\dist\img\avatar.png" />
+    <Content Include="Admin\Skins\dist\img\avatar04.png" />
+    <Content Include="Admin\Skins\dist\img\avatar2.png" />
+    <Content Include="Admin\Skins\dist\img\avatar3.png" />
+    <Content Include="Admin\Skins\dist\img\avatar5.png" />
+    <Content Include="Admin\Skins\dist\img\boxed-bg.jpg" />
+    <Content Include="Admin\Skins\dist\img\boxed-bg.png" />
+    <Content Include="Admin\Skins\dist\img\credit\american-express.png" />
+    <Content Include="Admin\Skins\dist\img\credit\cirrus.png" />
+    <Content Include="Admin\Skins\dist\img\credit\mastercard.png" />
+    <Content Include="Admin\Skins\dist\img\credit\mestro.png" />
+    <Content Include="Admin\Skins\dist\img\credit\paypal.png" />
+    <Content Include="Admin\Skins\dist\img\credit\paypal2.png" />
+    <Content Include="Admin\Skins\dist\img\credit\visa.png" />
+    <Content Include="Admin\Skins\dist\img\default-50x50.gif" />
+    <Content Include="Admin\Skins\dist\img\icons.png" />
+    <Content Include="Admin\Skins\dist\img\photo1.png" />
+    <Content Include="Admin\Skins\dist\img\photo2.png" />
+    <Content Include="Admin\Skins\dist\img\photo3.jpg" />
+    <Content Include="Admin\Skins\dist\img\photo4.jpg" />
+    <Content Include="Admin\Skins\dist\img\user1-128x128.jpg" />
+    <Content Include="Admin\Skins\dist\img\user2-160x160.jpg" />
+    <Content Include="Admin\Skins\dist\img\user3-128x128.jpg" />
+    <Content Include="Admin\Skins\dist\img\user4-128x128.jpg" />
+    <Content Include="Admin\Skins\dist\img\user5-128x128.jpg" />
+    <Content Include="Admin\Skins\dist\img\user6-128x128.jpg" />
+    <Content Include="Admin\Skins\dist\img\user7-128x128.jpg" />
+    <Content Include="Admin\Skins\dist\img\user8-128x128.jpg" />
+    <Content Include="Admin\Skins\dist\js\app.js" />
+    <Content Include="Admin\Skins\dist\js\app.min.js" />
+    <Content Include="Admin\Skins\dist\js\demo.js" />
+    <Content Include="Admin\Skins\dist\js\pages\dashboard.js" />
+    <Content Include="Admin\Skins\dist\js\pages\dashboard2.js" />
+    <Content Include="Admin\Skins\Icons.aspx" />
+    <Content Include="Admin\Skins\plugins\bootstrap-slider\bootstrap-slider.js" />
+    <Content Include="Admin\Skins\plugins\bootstrap-slider\slider.css" />
+    <Content Include="Admin\Skins\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.all.js" />
+    <Content Include="Admin\Skins\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.all.min.js" />
+    <Content Include="Admin\Skins\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.css" />
+    <Content Include="Admin\Skins\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.min.css" />
+    <Content Include="Admin\Skins\plugins\chartjs\Chart.js" />
+    <Content Include="Admin\Skins\plugins\chartjs\Chart.min.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\adapters\jquery.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\build-config.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\ckeditor.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\config.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\contents.css" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\af.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\ar.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\bg.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\bn.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\bs.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\ca.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\cs.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\cy.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\da.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\de.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\el.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\en-au.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\en-ca.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\en-gb.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\en.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\eo.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\es.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\et.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\eu.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\fa.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\fi.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\fo.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\fr-ca.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\fr.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\gl.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\gu.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\he.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\hi.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\hr.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\hu.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\id.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\is.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\it.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\ja.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\ka.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\km.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\ko.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\ku.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\lt.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\lv.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\mk.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\mn.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\ms.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\nb.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\nl.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\no.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\pl.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\pt-br.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\pt.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\ro.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\ru.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\si.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\sk.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\sl.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\sq.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\sr-latn.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\sr.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\sv.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\th.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\tr.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\ug.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\uk.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\vi.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\zh-cn.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\lang\zh.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\id.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ko.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\si.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\zh.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\fakeobjects\images\spacer.gif" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\icons.png" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\icons_hidpi.png" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\ar.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\bg.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\es.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\gl.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\hu.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\id.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\ja.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\km.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\ru.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\si.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\sl.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\uk.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\vi.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\zh.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\wsc\dialogs\tmp.html" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <Content Include="Admin\Skins\plugins\ckeditor\skins\moono\dialog.css" />
+    <Content Include="Admin\Skins\plugins\ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="Admin\Skins\plugins\ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="Admin\Skins\plugins\ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="Admin\Skins\plugins\ckeditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="Admin\Skins\plugins\ckeditor\skins\moono\dialog_opera.css" />
+    <Content Include="Admin\Skins\plugins\ckeditor\skins\moono\editor.css" />
+    <Content Include="Admin\Skins\plugins\ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="Admin\Skins\plugins\ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="Admin\Skins\plugins\ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="Admin\Skins\plugins\ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="Admin\Skins\plugins\ckeditor\skins\moono\editor_iequirks.css" />
+    <Content Include="Admin\Skins\plugins\ckeditor\skins\moono\icons.png" />
+    <Content Include="Admin\Skins\plugins\ckeditor\skins\moono\icons_hidpi.png" />
+    <Content Include="Admin\Skins\plugins\ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="Admin\Skins\plugins\ckeditor\skins\moono\images\close.png" />
+    <Content Include="Admin\Skins\plugins\ckeditor\skins\moono\images\hidpi\close.png" />
+    <Content Include="Admin\Skins\plugins\ckeditor\skins\moono\images\hidpi\lock-open.png" />
+    <Content Include="Admin\Skins\plugins\ckeditor\skins\moono\images\hidpi\lock.png" />
+    <Content Include="Admin\Skins\plugins\ckeditor\skins\moono\images\hidpi\refresh.png" />
+    <Content Include="Admin\Skins\plugins\ckeditor\skins\moono\images\lock-open.png" />
+    <Content Include="Admin\Skins\plugins\ckeditor\skins\moono\images\lock.png" />
+    <Content Include="Admin\Skins\plugins\ckeditor\skins\moono\images\refresh.png" />
+    <Content Include="Admin\Skins\plugins\ckeditor\styles.js" />
+    <Content Include="Admin\Skins\plugins\colorpicker\bootstrap-colorpicker.css" />
+    <Content Include="Admin\Skins\plugins\colorpicker\bootstrap-colorpicker.js" />
+    <Content Include="Admin\Skins\plugins\colorpicker\bootstrap-colorpicker.min.css" />
+    <Content Include="Admin\Skins\plugins\colorpicker\bootstrap-colorpicker.min.js" />
+    <Content Include="Admin\Skins\plugins\colorpicker\img\alpha-horizontal.png" />
+    <Content Include="Admin\Skins\plugins\colorpicker\img\alpha.png" />
+    <Content Include="Admin\Skins\plugins\colorpicker\img\hue-horizontal.png" />
+    <Content Include="Admin\Skins\plugins\colorpicker\img\hue.png" />
+    <Content Include="Admin\Skins\plugins\colorpicker\img\saturation.png" />
+    <Content Include="Admin\Skins\plugins\datatables\dataTables.bootstrap.css" />
+    <Content Include="Admin\Skins\plugins\datatables\dataTables.bootstrap.js" />
+    <Content Include="Admin\Skins\plugins\datatables\dataTables.bootstrap.min.js" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\AutoFill\css\dataTables.autoFill.css" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\AutoFill\css\dataTables.autoFill.min.css" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\AutoFill\examples\columns.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\AutoFill\examples\complete-callback.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\AutoFill\examples\fill-both.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\AutoFill\examples\fill-horizontal.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\AutoFill\examples\index.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\AutoFill\examples\scrolling.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\AutoFill\examples\simple.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\AutoFill\examples\step-callback.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\AutoFill\images\filler.png" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\AutoFill\js\dataTables.autoFill.js" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\AutoFill\js\dataTables.autoFill.min.js" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\AutoFill\Readme.txt" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColReorder\css\dataTables.colReorder.css" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColReorder\css\dataTables.colReorder.min.css" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColReorder\examples\alt_insert.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColReorder\examples\colvis.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColReorder\examples\col_filter.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColReorder\examples\fixedcolumns.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColReorder\examples\fixedheader.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColReorder\examples\index.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColReorder\examples\jqueryui.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColReorder\examples\new_init.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColReorder\examples\predefined.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColReorder\examples\realtime.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColReorder\examples\reset.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColReorder\examples\scrolling.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColReorder\examples\server_side.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColReorder\examples\simple.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColReorder\examples\state_save.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColReorder\images\insert.png" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColReorder\js\dataTables.colReorder.js" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColReorder\js\dataTables.colReorder.min.js" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColReorder\License.txt" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColVis\css\dataTables.colVis.css" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColVis\css\dataTables.colvis.jqueryui.css" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColVis\css\dataTables.colVis.min.css" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColVis\examples\button_order.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColVis\examples\exclude_columns.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColVis\examples\group_columns.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColVis\examples\index.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColVis\examples\jqueryui.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColVis\examples\mouseover.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColVis\examples\new_init.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColVis\examples\restore.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColVis\examples\simple.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColVis\examples\text.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColVis\examples\title_callback.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColVis\examples\two_tables.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColVis\examples\two_tables_identical.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColVis\js\dataTables.colVis.js" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColVis\js\dataTables.colVis.min.js" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\ColVis\License.txt" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedColumns\css\dataTables.fixedColumns.css" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedColumns\css\dataTables.fixedColumns.min.css" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedColumns\examples\bootstrap.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedColumns\examples\colvis.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedColumns\examples\col_filter.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedColumns\examples\css_size.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedColumns\examples\index.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedColumns\examples\index_column.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedColumns\examples\left_right_columns.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedColumns\examples\right_column.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedColumns\examples\rowspan.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedColumns\examples\server-side-processing.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedColumns\examples\simple.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedColumns\examples\size_fixed.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedColumns\examples\size_fluid.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedColumns\examples\two_columns.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedColumns\js\dataTables.fixedColumns.js" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedColumns\js\dataTables.fixedColumns.min.js" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedColumns\License.txt" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedHeader\css\dataTables.fixedHeader.css" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedHeader\css\dataTables.fixedHeader.min.css" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedHeader\examples\header_footer.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedHeader\examples\index.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedHeader\examples\simple.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedHeader\examples\top_left_right.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedHeader\examples\two_tables.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedHeader\examples\zIndexes.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedHeader\js\dataTables.fixedHeader.js" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedHeader\js\dataTables.fixedHeader.min.js" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\FixedHeader\Readme.txt" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\KeyTable\css\dataTables.keyTable.css" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\KeyTable\css\dataTables.keyTable.min.css" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\KeyTable\examples\events.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\KeyTable\examples\html.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\KeyTable\examples\index.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\KeyTable\examples\scrolling.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\KeyTable\examples\simple.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\KeyTable\js\dataTables.keyTable.js" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\KeyTable\js\dataTables.keyTable.min.js" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\KeyTable\Readme.txt" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\css\dataTables.responsive.css" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\examples\child-rows\column-control.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\examples\child-rows\custom-renderer.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\examples\child-rows\disable-child-rows.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\examples\child-rows\index.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\examples\child-rows\right-column.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\examples\child-rows\whole-row-control.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\examples\display-control\auto.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\examples\display-control\classes.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\examples\display-control\complexHeader.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\examples\display-control\fixedHeader.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\examples\display-control\index.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\examples\display-control\init-classes.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\examples\index.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\examples\initialisation\ajax.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\examples\initialisation\className.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\examples\initialisation\default.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\examples\initialisation\index.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\examples\initialisation\new.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\examples\initialisation\option.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\examples\styling\bootstrap.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\examples\styling\compact.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\examples\styling\foundation.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\examples\styling\index.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\examples\styling\scrolling.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\js\dataTables.responsive.js" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\js\dataTables.responsive.min.js" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Responsive\License.txt" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Scroller\css\dataTables.scroller.css" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Scroller\css\dataTables.scroller.min.css" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Scroller\examples\api_scrolling.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Scroller\examples\data\2500.txt" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Scroller\examples\index.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Scroller\examples\large_js_source.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Scroller\examples\server-side_processing.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Scroller\examples\simple.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Scroller\examples\state_saving.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Scroller\images\loading-background.png" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Scroller\js\dataTables.scroller.js" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Scroller\js\dataTables.scroller.min.js" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\Scroller\Readme.txt" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\css\dataTables.tableTools.css" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\css\dataTables.tableTools.min.css" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\examples\ajax.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\examples\alter_buttons.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\examples\bootstrap.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\examples\button_text.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\examples\collection.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\examples\defaults.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\examples\index.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\examples\jqueryui.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\examples\multiple_tables.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\examples\multi_instance.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\examples\new_init.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\examples\pdf_message.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\examples\plug-in.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\examples\select_column.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\examples\select_multi.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\examples\select_os.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\examples\select_single.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\examples\simple.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\examples\swf_path.html" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\images\collection.png" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\images\collection_hover.png" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\images\copy.png" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\images\copy_hover.png" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\images\csv.png" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\images\csv_hover.png" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\images\pdf.png" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\images\pdf_hover.png" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\images\print.png" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\images\print_hover.png" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\images\xls.png" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\images\xls_hover.png" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\js\dataTables.tableTools.js" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\js\dataTables.tableTools.min.js" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\swf\copy_csv_xls.swf" />
+    <Content Include="Admin\Skins\plugins\datatables\extensions\TableTools\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Admin\Skins\plugins\datatables\images\sort_asc.png" />
+    <Content Include="Admin\Skins\plugins\datatables\images\sort_asc_disabled.png" />
+    <Content Include="Admin\Skins\plugins\datatables\images\sort_both.png" />
+    <Content Include="Admin\Skins\plugins\datatables\images\sort_desc.png" />
+    <Content Include="Admin\Skins\plugins\datatables\images\sort_desc_disabled.png" />
+    <Content Include="Admin\Skins\plugins\datatables\jquery.dataTables.css" />
+    <Content Include="Admin\Skins\plugins\datatables\jquery.dataTables.js" />
+    <Content Include="Admin\Skins\plugins\datatables\jquery.dataTables.min.css" />
+    <Content Include="Admin\Skins\plugins\datatables\jquery.dataTables.min.js" />
+    <Content Include="Admin\Skins\plugins\datatables\jquery.dataTables_themeroller.css" />
+    <Content Include="Admin\Skins\plugins\datepicker\bootstrap-datepicker.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\datepicker3.css" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.ar.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.az.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.bg.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.ca.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.cs.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.cy.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.da.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.de.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.el.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.es.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.et.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.fa.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.fi.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.fr.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.gl.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.he.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.hr.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.hu.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.id.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.is.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.it.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.ja.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.ka.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.kk.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.kr.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.lt.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.lv.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.mk.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.ms.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.nb.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.nl-BE.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.nl.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.no.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.pl.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.pt-BR.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.pt.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.ro.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.rs-latin.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.rs.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.ru.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.sk.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.sl.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.sq.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.sv.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.sw.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.th.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.tr.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.ua.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.vi.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.zh-CN.js" />
+    <Content Include="Admin\Skins\plugins\datepicker\locales\bootstrap-datepicker.zh-TW.js" />
+    <Content Include="Admin\Skins\plugins\daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="Admin\Skins\plugins\daterangepicker\daterangepicker.js" />
+    <Content Include="Admin\Skins\plugins\daterangepicker\moment.js" />
+    <Content Include="Admin\Skins\plugins\daterangepicker\moment.min.js" />
+    <Content Include="Admin\Skins\plugins\fastclick\fastclick.js" />
+    <Content Include="Admin\Skins\plugins\fastclick\fastclick.min.js" />
+    <Content Include="Admin\Skins\plugins\flot\excanvas.js" />
+    <Content Include="Admin\Skins\plugins\flot\excanvas.min.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.colorhelpers.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.colorhelpers.min.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.canvas.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.canvas.min.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.categories.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.categories.min.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.crosshair.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.crosshair.min.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.errorbars.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.errorbars.min.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.fillbetween.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.fillbetween.min.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.image.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.image.min.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.min.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.navigate.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.navigate.min.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.pie.min.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.resize.min.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.selection.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.selection.min.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.stack.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.stack.min.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.symbol.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.symbol.min.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.threshold.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.threshold.min.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.time.js" />
+    <Content Include="Admin\Skins\plugins\flot\jquery.flot.time.min.js" />
+    <Content Include="Admin\Skins\plugins\fullcalendar\fullcalendar.css" />
+    <Content Include="Admin\Skins\plugins\fullcalendar\fullcalendar.js" />
+    <Content Include="Admin\Skins\plugins\fullcalendar\fullcalendar.min.css" />
+    <Content Include="Admin\Skins\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Admin\Skins\plugins\fullcalendar\fullcalendar.print.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\all.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\aero%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\aero.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\aero.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\blue%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\blue.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\blue.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\flat%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\flat.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\flat.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\green%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\green.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\green.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\grey%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\grey.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\grey.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\orange%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\orange.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\orange.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\pink%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\pink.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\pink.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\purple%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\purple.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\purple.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\red%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\red.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\red.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\yellow%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\yellow.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\yellow.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\flat\_all.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\futurico\futurico%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\futurico\futurico.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\futurico\futurico.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\icheck.js" />
+    <Content Include="Admin\Skins\plugins\iCheck\icheck.min.js" />
+    <Content Include="Admin\Skins\plugins\iCheck\line\aero.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\line\blue.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\line\green.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\line\grey.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\line\line%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\line\line.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\line\line.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\line\orange.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\line\pink.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\line\purple.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\line\red.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\line\yellow.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\line\_all.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\aero%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\aero.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\aero.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\blue%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\blue.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\blue.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\green%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\green.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\green.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\grey%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\grey.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\grey.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\minimal%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\minimal.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\minimal.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\orange%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\orange.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\orange.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\pink%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\pink.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\pink.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\purple%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\purple.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\purple.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\red%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\red.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\red.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\yellow%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\yellow.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\yellow.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\minimal\_all.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\polaris\polaris%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\polaris\polaris.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\polaris\polaris.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\aero%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\aero.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\aero.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\blue%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\blue.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\blue.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\green%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\green.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\green.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\grey%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\grey.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\grey.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\orange%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\orange.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\orange.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\pink%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\pink.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\pink.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\purple%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\purple.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\purple.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\red%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\red.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\red.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\square%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\square.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\square.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\yellow%402x.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\yellow.css" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\yellow.png" />
+    <Content Include="Admin\Skins\plugins\iCheck\square\_all.css" />
+    <Content Include="Admin\Skins\plugins\input-mask\jquery.inputmask.date.extensions.js" />
+    <Content Include="Admin\Skins\plugins\input-mask\jquery.inputmask.extensions.js" />
+    <Content Include="Admin\Skins\plugins\input-mask\jquery.inputmask.js" />
+    <Content Include="Admin\Skins\plugins\input-mask\jquery.inputmask.numeric.extensions.js" />
+    <Content Include="Admin\Skins\plugins\input-mask\jquery.inputmask.phone.extensions.js" />
+    <Content Include="Admin\Skins\plugins\input-mask\jquery.inputmask.regex.extensions.js" />
+    <Content Include="Admin\Skins\plugins\input-mask\phone-codes\readme.txt" />
+    <Content Include="Admin\Skins\plugins\ionslider\img\sprite-skin-flat.png" />
+    <Content Include="Admin\Skins\plugins\ionslider\img\sprite-skin-nice.png" />
+    <Content Include="Admin\Skins\plugins\ionslider\ion.rangeSlider.css" />
+    <Content Include="Admin\Skins\plugins\ionslider\ion.rangeSlider.min.js" />
+    <Content Include="Admin\Skins\plugins\ionslider\ion.rangeSlider.skinFlat.css" />
+    <Content Include="Admin\Skins\plugins\ionslider\ion.rangeSlider.skinNice.css" />
+    <Content Include="Admin\Skins\plugins\jQueryUI\jquery-ui.js" />
+    <Content Include="Admin\Skins\plugins\jQueryUI\jquery-ui.min.js" />
+    <Content Include="Admin\Skins\plugins\jQuery\jQuery-2.1.4.min.js" />
+    <Content Include="Admin\Skins\plugins\jvectormap\jquery-jvectormap-1.2.2.css" />
+    <Content Include="Admin\Skins\plugins\jvectormap\jquery-jvectormap-1.2.2.min.js" />
+    <Content Include="Admin\Skins\plugins\jvectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Admin\Skins\plugins\knob\jquery.knob.js" />
+    <Content Include="Admin\Skins\plugins\morris\morris.css" />
+    <Content Include="Admin\Skins\plugins\morris\morris.js" />
+    <Content Include="Admin\Skins\plugins\morris\morris.min.js" />
+    <Content Include="Admin\Skins\plugins\pace\pace.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\az.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\bg.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\ca.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\cs.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\da.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\de.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\en.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\es.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\et.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\eu.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\fa.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\fi.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\fr.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\gl.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\he.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\hi.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\hr.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\hu.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\id.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\is.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\it.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\ko.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\lt.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\lv.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\mk.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\nb.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\nl.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\pl.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\pt-BR.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\pt.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\ro.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\ru.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\sk.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\sr.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\sv.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\th.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\tr.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\uk.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\vi.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\zh-CN.js" />
+    <Content Include="Admin\Skins\plugins\select2\i18n\zh-TW.js" />
+    <Content Include="Admin\Skins\plugins\select2\select2.css" />
+    <Content Include="Admin\Skins\plugins\select2\select2.full.js" />
+    <Content Include="Admin\Skins\plugins\select2\select2.full.min.js" />
+    <Content Include="Admin\Skins\plugins\select2\select2.js" />
+    <Content Include="Admin\Skins\plugins\select2\select2.min.css" />
+    <Content Include="Admin\Skins\plugins\select2\select2.min.js" />
+    <Content Include="Admin\Skins\plugins\slimScroll\jquery.slimscroll.js" />
+    <Content Include="Admin\Skins\plugins\slimScroll\jquery.slimscroll.min.js" />
+    <Content Include="Admin\Skins\plugins\sparkline\jquery.sparkline.js" />
+    <Content Include="Admin\Skins\plugins\sparkline\jquery.sparkline.min.js" />
+    <Content Include="Admin\Skins\plugins\timepicker\bootstrap-timepicker.css" />
+    <Content Include="Admin\Skins\plugins\timepicker\bootstrap-timepicker.js" />
+    <Content Include="Admin\Skins\plugins\timepicker\bootstrap-timepicker.min.css" />
+    <Content Include="Admin\Skins\plugins\timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="Admin\SMS\SMS.aspx" />
+    <Content Include="Admin\SMS\SMSEdit.aspx" />
+    <Content Include="Admin\SurfaceSingle\SurfaceSingleMaintain.aspx" />
+    <Content Include="Admin\SurfaceSingle\SurfaceSingleManager.aspx" />
+    <Content Include="Admin\User\Edit.aspx" />
+    <Content Include="Admin\User\List.aspx" />
+    <Content Include="Admin\User\Profile.aspx" />
+    <Content Include="Admin\xiangmu\BASEQ04.aspx" />
+    <Content Include="Admin\xiangmu\caiwu1.aspx" />
+    <Content Include="Admin\xiangmu\caiwu1Add.aspx" />
+    <Content Include="Admin\xiangmu\caiwu2.aspx" />
+    <Content Include="Admin\xiangmu\caiwu2Add.aspx" />
+    <Content Include="Admin\xiangmu\caiwu3.aspx" />
+    <Content Include="Admin\xiangmu\caiwu31.aspx" />
+    <Content Include="Admin\xiangmu\caiwu32.aspx" />
+    <Content Include="Admin\xiangmu\caiwu3Add.aspx" />
+    <Content Include="Admin\xiangmu\caiwu4.aspx" />
+    <Content Include="Admin\xiangmu\caiwu4Add.aspx" />
+    <Content Include="Admin\xiangmu\caiwu5.aspx" />
+    <Content Include="Admin\xiangmu\caiwu51Add.aspx" />
+    <Content Include="Admin\xiangmu\caiwu5Add.aspx" />
+    <Content Include="Admin\xiangmu\caiwu6.aspx" />
+    <Content Include="Admin\xiangmu\caiwu6Add.aspx" />
+    <Content Include="Admin\xiangmu\caiwu6Add2.aspx" />
+    <Content Include="Admin\xiangmu\caiwu7.aspx" />
+    <Content Include="Admin\xiangmu\caiwu8.aspx" />
+    <Content Include="Admin\xiangmu\caiwu8Add.aspx" />
+    <Content Include="Admin\xiangmu\caiwu8Add2.aspx" />
+    <Content Include="Admin\xiangmu\hetong1.aspx" />
+    <Content Include="Admin\xiangmu\hetong1Add.aspx" />
+    <Content Include="Admin\xiangmu\hetong2.aspx" />
+    <Content Include="Admin\xiangmu\hetong2Add.aspx" />
+    <Content Include="Admin\xiangmu\hetong3.aspx" />
+    <Content Include="Admin\xiangmu\hetong33Add.aspx" />
+    <Content Include="Admin\xiangmu\hetong3Add.aspx" />
+    <Content Include="Admin\xiangmu\hetong4.aspx" />
+    <Content Include="Admin\xiangmu\hezuo1.aspx" />
+    <Content Include="Admin\xiangmu\hezuo1Add.aspx" />
+    <Content Include="Admin\xiangmu\hezuo2.aspx" />
+    <Content Include="Admin\xiangmu\hezuo2Add.aspx" />
+    <Content Include="Admin\xiangmu\hezuo3.aspx" />
+    <Content Include="Admin\xiangmu\hezuo3Add.aspx" />
+    <Content Include="Admin\xiangmu\hezuo4.aspx" />
+    <Content Include="Admin\xiangmu\hezuo4Add.aspx" />
+    <Content Include="Admin\xiangmu\hezuo5.aspx" />
+    <Content Include="Admin\xiangmu\print.aspx" />
+    <Content Include="Admin\xiangmu\print1.aspx" />
+    <Content Include="Admin\xiangmu\print2.aspx" />
+    <Content Include="Admin\xiangmu\print3.aspx" />
+    <Content Include="Admin\xiangmu\print4.aspx" />
+    <Content Include="Admin\xiangmu\shangchuan.aspx" />
+    <Content Include="Admin\xiangmu\shangchuan2.aspx" />
+    <Content Include="Admin\xiangmu\shangchuan3.aspx" />
+    <Content Include="Admin\xiangmu\shangchuan4.aspx" />
+    <Content Include="Admin\xiangmu\shangchuan5.aspx" />
+    <Content Include="Admin\xiangmu\shenhecaozuo.aspx" />
+    <Content Include="Admin\xiangmu\shenhecaozuo2.aspx" />
+    <Content Include="Admin\xiangmu\shenhefujian.aspx" />
+    <Content Include="Admin\xiangmu\shenhemingxi.aspx" />
+    <Content Include="Admin\xiangmu\shichang1.aspx" />
+    <Content Include="Admin\xiangmu\shichang1Add.aspx" />
+    <Content Include="Admin\xiangmu\shichang2.aspx" />
+    <Content Include="Admin\xiangmu\shichang2Add.aspx" />
+    <Content Include="Admin\xiangmu\shichang3.aspx" />
+    <Content Include="Admin\xiangmu\shichang3Add.aspx" />
+    <Content Include="Admin\xiangmu\shouye.aspx" />
+    <Content Include="Admin\xiangmu\xiangmu1.aspx" />
+    <Content Include="Admin\xiangmu\xiangmu11.aspx" />
+    <Content Include="Admin\xiangmu\xiangmu11Add.aspx" />
+    <Content Include="Admin\xiangmu\xiangmu1Add.aspx" />
+    <Content Include="Admin\xiangmu\xiangmu2.aspx" />
+    <Content Include="Admin\xiangmu\xiangmu2Add.aspx" />
+    <Content Include="Admin\xiangmu\xiangmu3.aspx" />
+    <Content Include="Admin\xiangmu\xiangmu31Add.aspx" />
+    <Content Include="Admin\xiangmu\xiangmu3Add.aspx" />
+    <Content Include="Admin\xiangmu\xiangmu4.aspx" />
+    <Content Include="Admin\xiangmu\xiangmu4Add.aspx" />
+    <Content Include="Admin\xiangmu\xiangmu5.aspx" />
+    <Content Include="Admin\xiangmu\xiangmu6.aspx" />
+    <Content Include="Admin\xiangmu\xiangmu7.aspx" />
+    <Content Include="Admin\xiangmu\xiangmu8.aspx" />
+    <Content Include="Admin\xiangmu\xiangmu8Add.aspx" />
+    <Content Include="Admin\xiangmu\xiangmu8_1.aspx" />
+    <Content Include="Admin\xiangmu\xiangmu8_1Add.aspx" />
+    <Content Include="Admin\xiangmu\xiangmu8_2.aspx" />
+    <Content Include="Admin\xiangmu\xiangmu8_2Add.aspx" />
+    <Content Include="Admin\xiangmu\xiangmu8_3.aspx" />
+    <Content Include="Admin\xiangmu\xiangmu8_31.aspx" />
+    <Content Include="Admin\xiangmu\xiangmu9.aspx" />
+    <Content Include="Admin\xiangmu\xiangmu9Add.aspx" />
+    <Content Include="Admin\xiangmu\公司证件UploadFile\20190102032919\22222.txt" />
+    <Content Include="Admin\xiangmu\公司证件UploadFile\20190102112918\22222.txt" />
+    <Content Include="Admin\xiangmu\公司证件UploadFile\20190102113225\22222.txt" />
+    <Content Include="Admin\zhengjian\chedaoqi2.aspx" />
+    <Content Include="Admin\zhengjian\cheguoqi.aspx" />
+    <Content Include="Admin\zhengjian\cheliangzj.aspx" />
+    <Content Include="Admin\zhengjian\cheliangzjEdit.aspx" />
+    <Content Include="Admin\zhengjian\companyguoqi.aspx" />
+    <Content Include="Admin\zhengjian\gongshiz.aspx" />
+    <Content Include="Admin\zhengjian\gongshizEdit.aspx" />
+    <Content Include="Admin\zhengjian\shengri.aspx" />
+    <Content Include="Admin\zhengjian\WebForm1.aspx" />
+    <Content Include="Admin\zhengjian\xuqianhetong.aspx" />
+    <Content Include="Admin\zhengjian\yuangongzs.aspx" />
+    <Content Include="Admin\zhengjian\yuangongzsEdit.aspx" />
+    <Content Include="Admin\zhengjian\zhengshudaoqi.aspx" />
+    <Content Include="App_LocalResources\config.xml" />
+    <Content Include="Data\McCMS_V5.mdb" />
+    <Content Include="Files\User\1\2015102321215926568945.jpg" />
+    <Content Include="Files\User\2\2018030615435645376750.jpg" />
+    <Content Include="Image\icon1.png" />
+    <Content Include="Image\首页图.png" />
+    <Content Include="index.html" />
+    <Content Include="Resource\JS\jquery.js" />
+    <Content Include="Image\lc.jpg" />
+    <Content Include="WebForm1.aspx" />
+    <Content Include="WebForm2.aspx" />
+    <Content Include="WebService\Logistics.asmx" />
+    <Content Include="Image\logo.png" />
+    <Content Include="Resource\JS\tssJS.all.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\BaseData\company.aspx.cs">
+      <DependentUpon>company.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BaseData\company.aspx.designer.cs">
+      <DependentUpon>company.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BaseData\companyEdit.aspx.cs">
+      <DependentUpon>companyEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BaseData\companyEdit.aspx.designer.cs">
+      <DependentUpon>companyEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BaseData\guige.aspx.cs">
+      <DependentUpon>guige.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BaseData\guige.aspx.designer.cs">
+      <DependentUpon>guige.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BaseData\guigeEdit.aspx.cs">
+      <DependentUpon>guigeEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BaseData\guigeEdit.aspx.designer.cs">
+      <DependentUpon>guigeEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BaseData\pinzhong.aspx.cs">
+      <DependentUpon>pinzhong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BaseData\pinzhong.aspx.designer.cs">
+      <DependentUpon>pinzhong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BaseData\pinzhongEdit.aspx.cs">
+      <DependentUpon>pinzhongEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BaseData\pinzhongEdit.aspx.designer.cs">
+      <DependentUpon>pinzhongEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BaseData\shenhe.aspx.cs">
+      <DependentUpon>shenhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BaseData\shenhe.aspx.designer.cs">
+      <DependentUpon>shenhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BaseData\xiangmujingli.aspx.cs">
+      <DependentUpon>xiangmujingli.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BaseData\xiangmujingli.aspx.designer.cs">
+      <DependentUpon>xiangmujingli.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BaseData\yewustyle.aspx.cs">
+      <DependentUpon>yewustyle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BaseData\yewustyle.aspx.designer.cs">
+      <DependentUpon>yewustyle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Controls\CKEditor.ascx.cs">
+      <DependentUpon>CKEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Controls\CKEditor.ascx.designer.cs">
+      <DependentUpon>CKEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Files.aspx.cs">
+      <DependentUpon>Files.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Files.aspx.designer.cs">
+      <DependentUpon>Files.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Commons\Album.aspx.cs">
+      <DependentUpon>Album.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Commons\Album.aspx.designer.cs">
+      <DependentUpon>Album.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Commons\Info.aspx.cs">
+      <DependentUpon>Info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Commons\Info.aspx.designer.cs">
+      <DependentUpon>Info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Commons\Main.master.cs">
+      <DependentUpon>Main.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Commons\Main.master.designer.cs">
+      <DependentUpon>Main.master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Commons\Simple.master.cs">
+      <DependentUpon>Simple.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Commons\Simple.master.designer.cs">
+      <DependentUpon>Simple.master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Controls\KindEditor.ascx.cs">
+      <DependentUpon>KindEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Controls\KindEditor.ascx.designer.cs">
+      <DependentUpon>KindEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Controls\ZedGraph.ascx.cs">
+      <DependentUpon>ZedGraph.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Controls\ZedGraph.ascx.designer.cs">
+      <DependentUpon>ZedGraph.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Dashboard\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Dashboard\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Identify\CheckCode.aspx.cs">
+      <DependentUpon>CheckCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Identify\CheckCode.aspx.designer.cs">
+      <DependentUpon>CheckCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Role\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Role\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Role\Name.aspx.cs">
+      <DependentUpon>Name.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Role\Name.aspx.designer.cs">
+      <DependentUpon>Name.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Role\NameEdit.aspx.cs">
+      <DependentUpon>NameEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Role\NameEdit.aspx.designer.cs">
+      <DependentUpon>NameEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Skins\Icons.aspx.cs">
+      <DependentUpon>Icons.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Skins\Icons.aspx.designer.cs">
+      <DependentUpon>Icons.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SMS\SMS.aspx.cs">
+      <DependentUpon>SMS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SMS\SMS.aspx.designer.cs">
+      <DependentUpon>SMS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SMS\SMSEdit.aspx.cs">
+      <DependentUpon>SMSEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SMS\SMSEdit.aspx.designer.cs">
+      <DependentUpon>SMSEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SurfaceSingle\SurfaceSingleMaintain.aspx.cs">
+      <DependentUpon>SurfaceSingleMaintain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SurfaceSingle\SurfaceSingleMaintain.aspx.designer.cs">
+      <DependentUpon>SurfaceSingleMaintain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SurfaceSingle\SurfaceSingleManager.aspx.cs">
+      <DependentUpon>SurfaceSingleManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SurfaceSingle\SurfaceSingleManager.aspx.designer.cs">
+      <DependentUpon>SurfaceSingleManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\User\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\User\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\User\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\User\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\User\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\User\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\BASEQ04.aspx.cs">
+      <DependentUpon>BASEQ04.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\BASEQ04.aspx.designer.cs">
+      <DependentUpon>BASEQ04.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\BASEQ04_SharedQuery.cs" />
+    <Compile Include="Admin\xiangmu\caiwu1.aspx.cs">
+      <DependentUpon>caiwu1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu1.aspx.designer.cs">
+      <DependentUpon>caiwu1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu1Add.aspx.cs">
+      <DependentUpon>caiwu1Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu1Add.aspx.designer.cs">
+      <DependentUpon>caiwu1Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu2.aspx.cs">
+      <DependentUpon>caiwu2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu2.aspx.designer.cs">
+      <DependentUpon>caiwu2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu2Add.aspx.cs">
+      <DependentUpon>caiwu2Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu2Add.aspx.designer.cs">
+      <DependentUpon>caiwu2Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu3.aspx.cs">
+      <DependentUpon>caiwu3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu3.aspx.designer.cs">
+      <DependentUpon>caiwu3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu31.aspx.cs">
+      <DependentUpon>caiwu31.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu31.aspx.designer.cs">
+      <DependentUpon>caiwu31.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu32.aspx.cs">
+      <DependentUpon>caiwu32.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu32.aspx.designer.cs">
+      <DependentUpon>caiwu32.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu3Add.aspx.cs">
+      <DependentUpon>caiwu3Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu3Add.aspx.designer.cs">
+      <DependentUpon>caiwu3Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu4.aspx.cs">
+      <DependentUpon>caiwu4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu4.aspx.designer.cs">
+      <DependentUpon>caiwu4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu4Add.aspx.cs">
+      <DependentUpon>caiwu4Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu4Add.aspx.designer.cs">
+      <DependentUpon>caiwu4Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu5.aspx.cs">
+      <DependentUpon>caiwu5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu5.aspx.designer.cs">
+      <DependentUpon>caiwu5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu51Add.aspx.cs">
+      <DependentUpon>caiwu51Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu51Add.aspx.designer.cs">
+      <DependentUpon>caiwu51Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu5Add.aspx.cs">
+      <DependentUpon>caiwu5Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu5Add.aspx.designer.cs">
+      <DependentUpon>caiwu5Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu6.aspx.cs">
+      <DependentUpon>caiwu6.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu6.aspx.designer.cs">
+      <DependentUpon>caiwu6.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu6Add.aspx.cs">
+      <DependentUpon>caiwu6Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu6Add.aspx.designer.cs">
+      <DependentUpon>caiwu6Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu6Add2.aspx.cs">
+      <DependentUpon>caiwu6Add2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu6Add2.aspx.designer.cs">
+      <DependentUpon>caiwu6Add2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu7.aspx.cs">
+      <DependentUpon>caiwu7.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu7.aspx.designer.cs">
+      <DependentUpon>caiwu7.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu8.aspx.cs">
+      <DependentUpon>caiwu8.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu8.aspx.designer.cs">
+      <DependentUpon>caiwu8.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu8Add.aspx.cs">
+      <DependentUpon>caiwu8Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu8Add.aspx.designer.cs">
+      <DependentUpon>caiwu8Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu8Add2.aspx.cs">
+      <DependentUpon>caiwu8Add2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\caiwu8Add2.aspx.designer.cs">
+      <DependentUpon>caiwu8Add2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\CommonQuery_BLL.cs" />
+    <Compile Include="Admin\xiangmu\hetong1.aspx.cs">
+      <DependentUpon>hetong1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hetong1.aspx.designer.cs">
+      <DependentUpon>hetong1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hetong1Add.aspx.cs">
+      <DependentUpon>hetong1Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hetong1Add.aspx.designer.cs">
+      <DependentUpon>hetong1Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hetong2.aspx.cs">
+      <DependentUpon>hetong2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hetong2.aspx.designer.cs">
+      <DependentUpon>hetong2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hetong2Add.aspx.cs">
+      <DependentUpon>hetong2Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hetong2Add.aspx.designer.cs">
+      <DependentUpon>hetong2Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hetong3.aspx.cs">
+      <DependentUpon>hetong3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hetong3.aspx.designer.cs">
+      <DependentUpon>hetong3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hetong33Add.aspx.cs">
+      <DependentUpon>hetong33Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hetong33Add.aspx.designer.cs">
+      <DependentUpon>hetong33Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hetong3Add.aspx.cs">
+      <DependentUpon>hetong3Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hetong3Add.aspx.designer.cs">
+      <DependentUpon>hetong3Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hetong4.aspx.cs">
+      <DependentUpon>hetong4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hetong4.aspx.designer.cs">
+      <DependentUpon>hetong4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hezuo1.aspx.cs">
+      <DependentUpon>hezuo1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hezuo1.aspx.designer.cs">
+      <DependentUpon>hezuo1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hezuo1Add.aspx.cs">
+      <DependentUpon>hezuo1Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hezuo1Add.aspx.designer.cs">
+      <DependentUpon>hezuo1Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hezuo2.aspx.cs">
+      <DependentUpon>hezuo2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hezuo2.aspx.designer.cs">
+      <DependentUpon>hezuo2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hezuo2Add.aspx.cs">
+      <DependentUpon>hezuo2Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hezuo2Add.aspx.designer.cs">
+      <DependentUpon>hezuo2Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hezuo3.aspx.cs">
+      <DependentUpon>hezuo3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hezuo3.aspx.designer.cs">
+      <DependentUpon>hezuo3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hezuo3Add.aspx.cs">
+      <DependentUpon>hezuo3Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hezuo3Add.aspx.designer.cs">
+      <DependentUpon>hezuo3Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hezuo4.aspx.cs">
+      <DependentUpon>hezuo4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hezuo4.aspx.designer.cs">
+      <DependentUpon>hezuo4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hezuo4Add.aspx.cs">
+      <DependentUpon>hezuo4Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hezuo4Add.aspx.designer.cs">
+      <DependentUpon>hezuo4Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hezuo5.aspx.cs">
+      <DependentUpon>hezuo5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\hezuo5.aspx.designer.cs">
+      <DependentUpon>hezuo5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\print.aspx.cs">
+      <DependentUpon>print.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\print.aspx.designer.cs">
+      <DependentUpon>print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\print1.aspx.cs">
+      <DependentUpon>print1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\print1.aspx.designer.cs">
+      <DependentUpon>print1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\print2.aspx.cs">
+      <DependentUpon>print2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\print2.aspx.designer.cs">
+      <DependentUpon>print2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\print3.aspx.cs">
+      <DependentUpon>print3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\print3.aspx.designer.cs">
+      <DependentUpon>print3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\print4.aspx.cs">
+      <DependentUpon>print4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\print4.aspx.designer.cs">
+      <DependentUpon>print4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shangchuan.aspx.cs">
+      <DependentUpon>shangchuan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shangchuan.aspx.designer.cs">
+      <DependentUpon>shangchuan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shangchuan2.aspx.cs">
+      <DependentUpon>shangchuan2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shangchuan2.aspx.designer.cs">
+      <DependentUpon>shangchuan2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shangchuan3.aspx.cs">
+      <DependentUpon>shangchuan3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shangchuan3.aspx.designer.cs">
+      <DependentUpon>shangchuan3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shangchuan4.aspx.cs">
+      <DependentUpon>shangchuan4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shangchuan4.aspx.designer.cs">
+      <DependentUpon>shangchuan4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shangchuan5.aspx.cs">
+      <DependentUpon>shangchuan5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shangchuan5.aspx.designer.cs">
+      <DependentUpon>shangchuan5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shenhecaozuo.aspx.cs">
+      <DependentUpon>shenhecaozuo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shenhecaozuo.aspx.designer.cs">
+      <DependentUpon>shenhecaozuo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shenhecaozuo2.aspx.cs">
+      <DependentUpon>shenhecaozuo2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shenhecaozuo2.aspx.designer.cs">
+      <DependentUpon>shenhecaozuo2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shenhefujian.aspx.cs">
+      <DependentUpon>shenhefujian.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shenhefujian.aspx.designer.cs">
+      <DependentUpon>shenhefujian.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shenhemingxi.aspx.cs">
+      <DependentUpon>shenhemingxi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shenhemingxi.aspx.designer.cs">
+      <DependentUpon>shenhemingxi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shichang1.aspx.cs">
+      <DependentUpon>shichang1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shichang1.aspx.designer.cs">
+      <DependentUpon>shichang1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shichang1Add.aspx.cs">
+      <DependentUpon>shichang1Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shichang1Add.aspx.designer.cs">
+      <DependentUpon>shichang1Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shichang2.aspx.cs">
+      <DependentUpon>shichang2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shichang2.aspx.designer.cs">
+      <DependentUpon>shichang2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shichang2Add.aspx.cs">
+      <DependentUpon>shichang2Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shichang2Add.aspx.designer.cs">
+      <DependentUpon>shichang2Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shichang3.aspx.cs">
+      <DependentUpon>shichang3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shichang3.aspx.designer.cs">
+      <DependentUpon>shichang3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shichang3Add.aspx.cs">
+      <DependentUpon>shichang3Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shichang3Add.aspx.designer.cs">
+      <DependentUpon>shichang3Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shouye.aspx.cs">
+      <DependentUpon>shouye.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\shouye.aspx.designer.cs">
+      <DependentUpon>shouye.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\upFile.ashx.cs">
+      <DependentUpon>upFile.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu1.aspx.cs">
+      <DependentUpon>xiangmu1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu1.aspx.designer.cs">
+      <DependentUpon>xiangmu1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu11.aspx.cs">
+      <DependentUpon>xiangmu11.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu11.aspx.designer.cs">
+      <DependentUpon>xiangmu11.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu11Add.aspx.cs">
+      <DependentUpon>xiangmu11Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu11Add.aspx.designer.cs">
+      <DependentUpon>xiangmu11Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu1Add.aspx.cs">
+      <DependentUpon>xiangmu1Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu1Add.aspx.designer.cs">
+      <DependentUpon>xiangmu1Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu2.aspx.cs">
+      <DependentUpon>xiangmu2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu2.aspx.designer.cs">
+      <DependentUpon>xiangmu2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu2Add.aspx.cs">
+      <DependentUpon>xiangmu2Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu2Add.aspx.designer.cs">
+      <DependentUpon>xiangmu2Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu3.aspx.cs">
+      <DependentUpon>xiangmu3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu3.aspx.designer.cs">
+      <DependentUpon>xiangmu3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu31Add.aspx.cs">
+      <DependentUpon>xiangmu31Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu31Add.aspx.designer.cs">
+      <DependentUpon>xiangmu31Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu3Add.aspx.cs">
+      <DependentUpon>xiangmu3Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu3Add.aspx.designer.cs">
+      <DependentUpon>xiangmu3Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu4.aspx.cs">
+      <DependentUpon>xiangmu4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu4.aspx.designer.cs">
+      <DependentUpon>xiangmu4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu4Add.aspx.cs">
+      <DependentUpon>xiangmu4Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu4Add.aspx.designer.cs">
+      <DependentUpon>xiangmu4Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu5.aspx.cs">
+      <DependentUpon>xiangmu5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu5.aspx.designer.cs">
+      <DependentUpon>xiangmu5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu6.aspx.cs">
+      <DependentUpon>xiangmu6.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu6.aspx.designer.cs">
+      <DependentUpon>xiangmu6.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu7.aspx.cs">
+      <DependentUpon>xiangmu7.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu7.aspx.designer.cs">
+      <DependentUpon>xiangmu7.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu8.aspx.cs">
+      <DependentUpon>xiangmu8.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu8.aspx.designer.cs">
+      <DependentUpon>xiangmu8.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu8Add.aspx.cs">
+      <DependentUpon>xiangmu8Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu8Add.aspx.designer.cs">
+      <DependentUpon>xiangmu8Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu8_1.aspx.cs">
+      <DependentUpon>xiangmu8_1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu8_1.aspx.designer.cs">
+      <DependentUpon>xiangmu8_1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu8_1Add.aspx.cs">
+      <DependentUpon>xiangmu8_1Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu8_1Add.aspx.designer.cs">
+      <DependentUpon>xiangmu8_1Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu8_2.aspx.cs">
+      <DependentUpon>xiangmu8_2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu8_2.aspx.designer.cs">
+      <DependentUpon>xiangmu8_2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu8_2Add.aspx.cs">
+      <DependentUpon>xiangmu8_2Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu8_2Add.aspx.designer.cs">
+      <DependentUpon>xiangmu8_2Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu8_3.aspx.cs">
+      <DependentUpon>xiangmu8_3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu8_3.aspx.designer.cs">
+      <DependentUpon>xiangmu8_3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu8_31.aspx.cs">
+      <DependentUpon>xiangmu8_31.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu8_31.aspx.designer.cs">
+      <DependentUpon>xiangmu8_31.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu9.aspx.cs">
+      <DependentUpon>xiangmu9.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu9.aspx.designer.cs">
+      <DependentUpon>xiangmu9.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu9Add.aspx.cs">
+      <DependentUpon>xiangmu9Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\xiangmu\xiangmu9Add.aspx.designer.cs">
+      <DependentUpon>xiangmu9Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\zhengjian\chedaoqi2.aspx.cs">
+      <DependentUpon>chedaoqi2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\zhengjian\chedaoqi2.aspx.designer.cs">
+      <DependentUpon>chedaoqi2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\zhengjian\cheguoqi.aspx.cs">
+      <DependentUpon>cheguoqi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\zhengjian\cheguoqi.aspx.designer.cs">
+      <DependentUpon>cheguoqi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\zhengjian\cheliangzj.aspx.cs">
+      <DependentUpon>cheliangzj.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\zhengjian\cheliangzj.aspx.designer.cs">
+      <DependentUpon>cheliangzj.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\zhengjian\cheliangzjEdit.aspx.cs">
+      <DependentUpon>cheliangzjEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\zhengjian\cheliangzjEdit.aspx.designer.cs">
+      <DependentUpon>cheliangzjEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\zhengjian\companyguoqi.aspx.cs">
+      <DependentUpon>companyguoqi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\zhengjian\companyguoqi.aspx.designer.cs">
+      <DependentUpon>companyguoqi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\zhengjian\gongshiz.aspx.cs">
+      <DependentUpon>gongshiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\zhengjian\gongshiz.aspx.designer.cs">
+      <DependentUpon>gongshiz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\zhengjian\gongshizEdit.aspx.cs">
+      <DependentUpon>gongshizEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\zhengjian\gongshizEdit.aspx.designer.cs">
+      <DependentUpon>gongshizEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\zhengjian\shengri.aspx.cs">
+      <DependentUpon>shengri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\zhengjian\shengri.aspx.designer.cs">
+      <DependentUpon>shengri.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\zhengjian\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\zhengjian\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\zhengjian\xuqianhetong.aspx.cs">
+      <DependentUpon>xuqianhetong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\zhengjian\xuqianhetong.aspx.designer.cs">
+      <DependentUpon>xuqianhetong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\zhengjian\yuangongzs.aspx.cs">
+      <DependentUpon>yuangongzs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\zhengjian\yuangongzs.aspx.designer.cs">
+      <DependentUpon>yuangongzs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\zhengjian\yuangongzsEdit.aspx.cs">
+      <DependentUpon>yuangongzsEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\zhengjian\yuangongzsEdit.aspx.designer.cs">
+      <DependentUpon>yuangongzsEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\zhengjian\zhengshudaoqi.aspx.cs">
+      <DependentUpon>zhengshudaoqi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\zhengjian\zhengshudaoqi.aspx.designer.cs">
+      <DependentUpon>zhengshudaoqi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService\Logistics.asmx.cs">
+      <DependentUpon>Logistics.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MojoCube.Api.Data\MojoCube.Api.csproj">
+      <Project>{1A54502A-8E36-4040-9551-7D1E8EBE7706}</Project>
+      <Name>MojoCube.Api</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MojoCube.Web\MojoCube.Web.csproj">
+      <Project>{E00F395B-6051-49F2-97BC-44A6FF618204}</Project>
+      <Name>MojoCube.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Admin\DownLoadTemplates\" />
+    <Folder Include="Admin\SendWaybill\UploadFile\" />
+    <Folder Include="Admin\zhengjian\公司证件UploadFile\" />
+    <Folder Include="Admin\zhengjian\员工一级建造师证书信息\" />
+    <Folder Include="Admin\zhengjian\员工个人信息证件\" />
+    <Folder Include="Admin\zhengjian\员工二级建造师证书信息\" />
+    <Folder Include="Admin\zhengjian\员工其他证件\" />
+    <Folder Include="Admin\zhengjian\员工劳动合同信息\" />
+    <Folder Include="Admin\zhengjian\员工学历信息\" />
+    <Folder Include="Admin\zhengjian\员工建筑类ABC证书信息\" />
+    <Folder Include="Admin\zhengjian\员工建筑类技术工种证书信息\" />
+    <Folder Include="Admin\zhengjian\员工建筑类职称证书信息\" />
+    <Folder Include="Admin\zhengjian\员工特种作业证书信息\" />
+    <Folder Include="Admin\zhengjian\员工通信类ABC证书信息\" />
+    <Folder Include="Admin\zhengjian\员工通信类技术工种证书信息\" />
+    <Folder Include="Admin\zhengjian\员工通信类概预算证书信息\" />
+    <Folder Include="Admin\zhengjian\员工通信类职称证书信息\" />
+    <Folder Include="Resource\Css\" />
+    <Folder Include="UploadFiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Browsers\Default.browser" />
+    <Content Include="Admin\Commons\Main.master" />
+    <Content Include="Admin\Commons\Simple.master" />
+    <None Include="Admin\Controls\CKEditor\CHANGES.md" />
+    <None Include="Admin\Controls\CKEditor\LICENSE.md" />
+    <None Include="Admin\Controls\CKEditor\plugins\scayt\LICENSE.md" />
+    <None Include="Admin\Controls\CKEditor\plugins\scayt\README.md" />
+    <None Include="Admin\Controls\CKEditor\plugins\wsc\LICENSE.md" />
+    <None Include="Admin\Controls\CKEditor\plugins\wsc\README.md" />
+    <None Include="Admin\Controls\CKEditor\README.md" />
+    <None Include="Admin\Controls\CKEditor\skins\bootstrapck\dev\locations.json" />
+    <None Include="Admin\Controls\CKEditor\skins\bootstrapck\readme.md" />
+    <None Include="Admin\Controls\CKEditor\skins\bootstrapck\scss\browser-specific\gecko\editor_gecko.scss" />
+    <None Include="Admin\Controls\CKEditor\skins\bootstrapck\scss\browser-specific\ie7\dialog_ie7.scss" />
+    <None Include="Admin\Controls\CKEditor\skins\bootstrapck\scss\browser-specific\ie7\editor_ie7.scss" />
+    <None Include="Admin\Controls\CKEditor\skins\bootstrapck\scss\browser-specific\ie8\dialog_ie8.scss" />
+    <None Include="Admin\Controls\CKEditor\skins\bootstrapck\scss\browser-specific\ie8\editor_ie8.scss" />
+    <None Include="Admin\Controls\CKEditor\skins\bootstrapck\scss\browser-specific\iequirks\dialog_iequirks.scss" />
+    <None Include="Admin\Controls\CKEditor\skins\bootstrapck\scss\browser-specific\iequirks\editor_iequirks.scss" />
+    <None Include="Admin\Controls\CKEditor\skins\bootstrapck\scss\browser-specific\ie\dialog_ie.scss" />
+    <None Include="Admin\Controls\CKEditor\skins\bootstrapck\scss\browser-specific\ie\editor_ie.scss" />
+    <None Include="Admin\Controls\CKEditor\skins\bootstrapck\scss\browser-specific\opera\dialog_opera.scss" />
+    <None Include="Admin\Controls\CKEditor\skins\bootstrapck\scss\components\editor.scss" />
+    <None Include="Admin\Controls\CKEditor\skins\bootstrapck\scss\components\_colorpanel.scss" />
+    <None Include="Admin\Controls\CKEditor\skins\bootstrapck\scss\components\_elementspath.scss" />
+    <None Include="Admin\Controls\CKEditor\skins\bootstrapck\scss\components\_mainui.scss" />
+    <None Include="Admin\Controls\CKEditor\skins\bootstrapck\scss\components\_menu.scss" />
+    <None Include="Admin\Controls\CKEditor\skins\bootstrapck\scss\components\_panel.scss" />
+    <None Include="Admin\Controls\CKEditor\skins\bootstrapck\scss\components\_presets.scss" />
+    <None Include="Admin\Controls\CKEditor\skins\bootstrapck\scss\components\_reset.scss" />
+    <None Include="Admin\Controls\CKEditor\skins\bootstrapck\scss\components\_richcombo.scss" />
+    <None Include="Admin\Controls\CKEditor\skins\bootstrapck\scss\components\_toolbar.scss" />
+    <None Include="Admin\Controls\CKEditor\skins\bootstrapck\scss\config\_colors.scss" />
+    <None Include="Admin\Controls\CKEditor\skins\bootstrapck\scss\config\_config.scss" />
+    <None Include="Admin\Controls\CKEditor\skins\bootstrapck\scss\config\_defaults.scss" />
+    <None Include="Admin\Controls\CKEditor\skins\bootstrapck\scss\dialog\dialog.scss" />
+    <None Include="Admin\Controls\CKEditor\skins\moono\readme.md" />
+    <Content Include="Admin\Controls\KindEditor\asp.net\file_manager_json.ashx" />
+    <Content Include="Admin\Controls\KindEditor\asp.net\upload_json.ashx" />
+    <Content Include="Admin\Css\fontawesome-webfont.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Admin\Css\fontawesome-webfont.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Admin\Css\fontawesome-webfont.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Admin\Css\fontawesome-webfont.woff2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Admin\Css\ionicons.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Admin\Css\ionicons.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Admin\Css\ionicons.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Admin\Skins\bootstrap\css\bootstrap.css.map" />
+    <None Include="Admin\Skins\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Admin\Skins\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Admin\Skins\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Admin\Skins\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Admin\Skins\plugins\ckeditor\CHANGES.md" />
+    <None Include="Admin\Skins\plugins\ckeditor\LICENSE.md" />
+    <None Include="Admin\Skins\plugins\ckeditor\plugins\scayt\LICENSE.md" />
+    <None Include="Admin\Skins\plugins\ckeditor\plugins\scayt\README.md" />
+    <None Include="Admin\Skins\plugins\ckeditor\plugins\wsc\LICENSE.md" />
+    <None Include="Admin\Skins\plugins\ckeditor\plugins\wsc\README.md" />
+    <None Include="Admin\Skins\plugins\ckeditor\README.md" />
+    <None Include="Admin\Skins\plugins\ckeditor\skins\moono\readme.md" />
+    <None Include="Admin\Skins\plugins\datatables\extensions\ColReorder\Readme.md" />
+    <None Include="Admin\Skins\plugins\datatables\extensions\ColVis\Readme.md" />
+    <None Include="Admin\Skins\plugins\datatables\extensions\FixedColumns\Readme.md" />
+    <None Include="Admin\Skins\plugins\datatables\extensions\Responsive\css\dataTables.responsive.scss" />
+    <None Include="Admin\Skins\plugins\datatables\extensions\Responsive\Readme.md" />
+    <None Include="Admin\Skins\plugins\datatables\extensions\Scroller\examples\data\ssp.php" />
+    <None Include="Admin\Skins\plugins\datatables\extensions\TableTools\images\psd\collection.psd" />
+    <None Include="Admin\Skins\plugins\datatables\extensions\TableTools\images\psd\copy document.psd" />
+    <None Include="Admin\Skins\plugins\datatables\extensions\TableTools\images\psd\file_types.psd" />
+    <None Include="Admin\Skins\plugins\datatables\extensions\TableTools\images\psd\printer.psd" />
+    <None Include="Admin\Skins\plugins\datatables\extensions\TableTools\Readme.md" />
+    <None Include="Admin\Skins\plugins\input-mask\phone-codes\phone-be.json" />
+    <None Include="Admin\Skins\plugins\input-mask\phone-codes\phone-codes.json" />
+    <None Include="Admin\UploadTemplates\公司证件资料导入.xls" />
+    <None Include="Admin\UploadTemplates\员工证件资料导入.xls" />
+    <None Include="Admin\UploadTemplates\证书到期导入.xls" />
+    <None Include="Admin\UploadTemplates\车辆证件资料导入.xls" />
+    <Content Include="Admin\xiangmu\upFile.ashx" />
+    <None Include="Admin\xiangmu\公司证件UploadFile\20190102113238\20190102112510.xlsx" />
+    <None Include="Admin\xiangmu\公司证件UploadFile\20190102113246\PartNo Upload Template1.xlsx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60112</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

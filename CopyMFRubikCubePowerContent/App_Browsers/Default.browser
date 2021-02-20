@@ -1,0 +1,13 @@
+﻿<!--
+可在 <windir>\Microsoft.NET\Framework\<ver>\CONFIG\Browsers 中找到现有的浏览器定义
+-->
+<browsers>
+  <browser refID="Default">
+    <controlAdapters>
+      <adapter controlType="System.Web.UI.HtmlControls.HtmlHead" adapterType="MojoCube.Api.Text.HtmlHeadAdapter"/>
+      <adapter controlType="System.Web.UI.HtmlControls.HtmlTitle" adapterType="MojoCube.Api.Text.HtmlTitleAdapter" />
+      <adapter controlType="System.Web.UI.HtmlControls.HtmlLink" adapterType="MojoCube.Api.Text.HtmlLinkAdapter"/>
+      <adapter controlType="System.Web.UI.HtmlControls.HtmlMeta" adapterType="MojoCube.Api.Text.HtmlMetaAdapter"/>
+    </controlAdapters>
+  </browser>
+</browsers>
